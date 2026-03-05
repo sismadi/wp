@@ -1,0 +1,100 @@
+{
+  "page": "pertemuan_13_implementasi_crud_update_delete",
+  "data": [
+    {
+      "section": "header",
+      "content": {
+        "nama": "Pertemuan 13: Implementasi CRUD — Update & Delete",
+        "tagline": "Melengkapi Siklus Operasional Data dengan Kontrol Penuh Pengguna",
+        "deskripsi": "Tahap akhir penyelesaian siklus CRUD. Mahasiswa akan mempelajari cara memanipulasi data spesifik menggunakan ID unik, teknik Event Delegation, dan pengelolaan State Management sederhana untuk fitur Update dan Delete.",
+        "cta": [
+          {
+            "text": "Selesaikan Siklus CRUD",
+            "link": "#update-delete-section",
+            "icon": "code/24x24/white"
+          }
+        ]
+      }
+    },
+    {
+      "section": "stats",
+      "caption": "Pilar Manipulasi Data (U-D)",
+      "content": [
+        {
+          "id": 1,
+          "nama": "Targeting by ID",
+          "isi": "Mengidentifikasi data secara spesifik menggunakan timestamp sebagai referensi tunggal dalam Array.",
+          "icon": "search/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "id": 2,
+          "nama": "Data Filtering",
+          "isi": "Menghapus data melalui metode .filter() dan menyinkronkannya kembali ke LocalStorage.",
+          "icon": "close/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "id": 3,
+          "nama": "Editing State",
+          "isi": "Mengelola mode 'Update' untuk mengisi ulang form (populate) dan memperbarui indeks data yang tepat.",
+          "icon": "setting/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "section": "progress",
+      "caption": "Kompetensi Manipulasi Data",
+      "content": [
+        {
+          "label": "Implementasi Delete Logic",
+          "percent": 100,
+          "value": "Clean"
+        },
+        {
+          "label": "Update Logic (Find & Edit)",
+          "percent": 85,
+          "value": "Complex"
+        },
+        {
+          "label": "Event Delegation",
+          "percent": 90,
+          "value": "Advanced"
+        }
+      ]
+    },
+    {
+      "section": "table",
+      "caption": "Aktivitas Praktikum (Hands-on)",
+      "content": [
+        {
+          "Aktivitas": "Logic: deleteData",
+          "Deskripsi Tugas": "Membuat fungsi filter array berdasarkan ID dan memperbarui LocalStorage secara instan."
+        },
+        {
+          "Aktivitas": "Logic: setupEdit",
+          "Deskripsi Tugas": "Mengambil data lama via .find() dan menampilkannya kembali ke dalam form input."
+        },
+        {
+          "Aktivitas": "Logic: updateData",
+          "Deskripsi Tugas": "Modifikasi handler simpan agar mendeteksi mode edit dan memperbarui object via index."
+        },
+        {
+          "Aktivitas": "UX Improvement",
+          "Deskripsi Tugas": "Integrasi modal konfirmasi kustom dan notifikasi sukses untuk setiap aksi hapus/ubah."
+        }
+      ]
+    },
+ 
+{
+"section": "btn",
+"btn": [
+{"text": "Menu","modal": "web/side/modules","icon": "menu"},
+{"text": "Kembali","url": "web/page/modul12","icon": "prev"},
+{"text": "Lanjut","url": "web/page/modul14","icon": "next"}
+]
+}
+
+]
+}

@@ -1,0 +1,107 @@
+{
+"page": "pertemuan_8_uts_praktikum",
+"data": [
+{
+"section": "header",
+"content": {
+"nama": "Pertemuan 8: Evaluasi Tengah Semester (UTS)",
+"tagline": "Uji Kompetensi: Membangun Modul Antarmuka Interaktif Niura",
+"deskripsi": "Evaluasi komprehensif kemampuan Front-End (HTML, CSS, JS). Mahasiswa akan diuji melalui Live Coding untuk membangun modul manajemen data statis dengan standar industri.",
+"cta": [
+{
+"text": "Mulai Ujian",
+"link": "#start-exam",
+"icon": "lock/24x24/white"
+}
+]
+}
+},
+{
+"section": "stats",
+"caption": "Parameter Evaluasi Utama",
+"content": [
+{
+"id": 1,
+"nama": "Semantic HTML",
+"isi": "Penggunaan tag struktur yang tepat dan pemberian ID/Class yang sistematis.",
+"icon": "code/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 2,
+"nama": "Responsive UI",
+"isi": "Implementasi Flexbox/Grid yang adaptif pada perangkat mobile dan desktop.",
+"icon": "menu/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 3,
+"nama": "DOM Logic",
+"isi": "Kemampuan menangkap data form dan merender tabel secara dinamis via JS.",
+"icon": "setting/32x32/var(--pColor)",
+"url": "#"
+}
+]
+},
+{
+"section": "progress",
+"caption": "Alokasi Waktu Ujian (150 Menit)",
+"content": [
+{
+"label": "Struktur & Styling (HTML/CSS)",
+"percent": 40,
+"value": "60 Menit"
+},
+{
+"label": "Interaktivitas & DOM (JS)",
+"percent": 50,
+"value": "75 Menit"
+},
+{
+"label": "Finishing & Dokumentasi",
+"percent": 10,
+"value": "15 Menit"
+}
+]
+},
+{
+"section": "table",
+"caption": "Rubrik Penilaian UTS",
+"content": [
+{
+"Kriteria": "Struktur HTML",
+"Bobot": "20%",
+"Indikator": "Tag semantik lengkap & ID/Class terorganisir."
+},
+{
+"Kriteria": "Desain CSS",
+"Bobot": "25%",
+"Indikator": "Responsif, estetis, dan penggunaan Flex/Grid."
+},
+{
+"Kriteria": "Manipulasi DOM",
+"Bobot": "30%",
+"Indikator": "Render data akurat dan fungsi hapus berjalan."
+},
+{
+"Kriteria": "Logika & Validasi",
+"Bobot": "20%",
+"Indikator": "Penanganan input kosong tanpa alert default."
+},
+{
+"Kriteria": "Kerapian Kode",
+"Bobot": "5%",
+"Indikator": "Komentar kode dan penamaan variabel deskriptif."
+}
+]
+},{
+"section": "btn",
+"btn": [
+{"text": "Menu","modal": "web/side/modules","icon": "menu"},
+{"text": "Kembali","url": "web/page/modul07","icon": "prev"},
+{"text": "Lanjut","url": "web/page/modul09","icon": "next"}
+]
+}
+
+]
+}

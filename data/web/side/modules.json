@@ -1,0 +1,28 @@
+{
+  "page": "home",
+  "data": [
+
+{
+  "section": "stats",
+  "caption": "app",
+  "content": [
+    { "title": "Modul 01", "desc": "", "icon": "wallet","url":"web/page/modul01" },
+    { "title": "Modul 02", "desc": "", "icon": "wallet","url":"web/page/modul02" },
+    { "title": "Modul 03", "desc": "", "icon": "wallet","url":"web/page/modul03" },
+    { "title": "Modul 04", "desc": "", "icon": "wallet","url":"web/page/modul04" },
+    { "title": "Modul 05", "desc": "", "icon": "wallet","url":"web/page/modul05" },
+    { "title": "Modul 06", "desc": "", "icon": "wallet","url":"web/page/modul06" },
+    { "title": "Modul 07", "desc": "", "icon": "wallet","url":"web/page/modul07" },
+    { "title": "UTS", "desc": "", "icon": "wallet","url":"web/page/modul08" },
+    { "title": "Modul 09", "desc": "", "icon": "wallet","url":"web/page/modul09" },
+    { "title": "Modul 10", "desc": "", "icon": "wallet","url":"web/page/modul10" },
+    { "title": "Modul 11", "desc": "", "icon": "wallet","url":"web/page/modul11" },
+    { "title": "Modul 12", "desc": "", "icon": "wallet","url":"web/page/modul12" },
+    { "title": "Modul 13", "desc": "", "icon": "wallet","url":"web/page/modul13" },
+    { "title": "Modul 14", "desc": "", "icon": "wallet","url":"web/page/modul14" },
+    { "title": "Modul 15", "desc": "", "icon": "wallet","url":"web/page/modul15" },
+    { "title": "UAS", "desc": "", "icon": "wallet","url":"web/page/modul16" }
+  ]
+}
+]
+}

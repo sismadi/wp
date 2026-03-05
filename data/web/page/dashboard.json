@@ -1,0 +1,112 @@
+{
+"page": "dashboard_utama_pemrograman_web",
+"data": [
+{
+"section": "header",
+"content": {
+"nama": "Dashboard Pembelajaran: CMS Project",
+"tagline": "Pusat Kendali Proyek dan Progres Akademik Anda",
+"deskripsi": "Pantau seluruh progres pengerjaan modul, akses materi dari pertemuan 1 hingga 15, dan siapkan aplikasi Anda untuk evaluasi akhir. Pastikan LocalStorage Anda sinkron dengan data.json terbaru.",
+"cta": [
+{
+"text": "Lanjutkan Coding",
+"link": "#pertemuan_12",
+"icon": "code/24x24/white"
+}
+]
+}
+},
+{
+"section": "stats",
+"caption": "Ringkasan Statistik Aplikasi Anda",
+"content": [
+{
+"id": 1,
+"nama": "Total Artikel",
+"isi": "Menampilkan jumlah data yang tersimpan di LocalStorage saat ini.",
+"icon": "book/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 2,
+"nama": "Status API",
+"isi": "Koneksi ke data.json berhasil dilakukan via Fetch API.",
+"icon": "check/32x32/skyblue"
+},
+{
+"id": 3,
+"nama": "Storage Limit",
+"isi": "Kapasitas LocalStorage tersisa sekitar 98% (Sangat Aman).",
+"icon": "lock/32x32/green"
+}
+]
+},
+{
+"section": "progress",
+"caption": "Penyelesaian Modul Perkuliahan",
+"content": [
+{
+"label": "Phase 1: UI/UX Foundation",
+"percent": 100,
+"value": "Completed"
+},
+{
+"label": "Phase 2: JavaScript Logic",
+"percent": 80,
+"value": "In Progress"
+},
+{
+"label": "Phase 3: Data Persistence",
+"percent": 30,
+"value": "Upcoming"
+}
+]
+},
+{
+"section": "table",
+"caption": "Jadwal Pertemuan & Akses Materi",
+"content": [
+{
+"Minggu": "01 - 04",
+"Topik Utama": "HTML5, CSS3, & Layouting Modern",
+"Status": "✅ Selesai"
+},
+{
+"Minggu": "05 - 08",
+"Topik Utama": "DOM Manipulation & UTS",
+"Status": "✅ Selesai"
+},
+{
+"Minggu": "09 - 12",
+"Topik Utama": "JSON, Fetch API, & LocalStorage",
+"Status": "🔵 Sedang Berjalan"
+},
+{
+"Minggu": "13 - 15",
+"Topik Utama": "CRUD Finalization & Demo Project",
+"Status": "⏳ Mendatang"
+}
+]
+},
+{
+"section": "btn",
+"btn": [
+{
+"text": "Lihat Repositori Kelas",
+"url": "#github",
+"icon": "code/24x24/white"
+},
+{
+"text": "Buka Editor (VS Code)",
+"url": "#vscode",
+"icon": "setting/24x24/white"
+},
+{
+"text": "Panduan UAS",
+"url": "#uas",
+"icon": "info/24x24/white"
+}
+]
+}
+]
+}

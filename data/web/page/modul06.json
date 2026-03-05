@@ -1,0 +1,99 @@
+{
+"page": "pertemuan_6_interaktivitas_dan_logika_render",
+"data": [
+{
+"section": "header",
+"content": {
+"nama": "Pertemuan 6: Interaktivitas Lanjutan & Logika Render Antarmuka",
+"tagline": "Menggerakkan Data Statis Menjadi Antarmuka Dinamis",
+"deskripsi": "Tahap krusial sebelum pengelolaan data permanen. Mahasiswa akan mempelajari logika kondisional untuk validasi, teknik looping untuk render tabel, serta modularitas fungsi untuk kode yang bersih.",
+"cta": [
+{
+"text": "Pelajari Render Logika",
+"link": "#render-logic",
+"icon": "code/24x24/white"
+}
+]
+}
+},
+{
+"section": "stats",
+"caption": "Logika Pemrograman UI",
+"content": [
+{
+"id": 1,
+"nama": "Looping & Render",
+"isi": "Menggunakan .forEach() dan Template Literals untuk menyusun baris tabel dari data Array.",
+"icon": "menu/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 2,
+"nama": "Conditional UI",
+"isi": "Logika if-else untuk validasi input dan penanganan Empty State (Data Kosong).",
+"icon": "info/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 3,
+"nama": "Class Manipulation",
+"isi": "Mengontrol animasi modal dan toast menggunakan classList.add() dan remove().",
+"icon": "setting/32x32/var(--pColor)",
+"url": "#"
+}
+]
+},
+{
+"section": "progress",
+"caption": "Target Penguasaan Arsitektur Kode",
+"content": [
+{
+"label": "Render Data dari Array",
+"percent": 90,
+"value": "Dinamis"
+},
+{
+"label": "Validasi Form Logic",
+"percent": 85,
+"value": "Robust"
+},
+{
+"label": "Modular Function (Reusability)",
+"percent": 80,
+"value": "Clean Code"
+}
+]
+},
+{
+"section": "table",
+"caption": "Aktivitas Praktikum (Hands-on)",
+"content": [
+{
+"Aktivitas": "Dummy Data Render",
+"Deskripsi Tugas": "Menampilkan data dari array objek ke dalam tabel secara otomatis saat window load."
+},
+{
+"Aktivitas": "Dynamic Actions",
+"Deskripsi Tugas": "Implementasi tombol Hapus pada tiap baris menggunakan method .remove() pada DOM."
+},
+{
+"Aktivitas": "Input to Table",
+"Deskripsi Tugas": "Mengambil data form, memasukkan ke array, dan memicu fungsi renderTable()."
+},
+{
+"Aktivitas": "Modularitas",
+"Deskripsi Tugas": "Memisahkan fungsi clearForm() dan showNotification() agar kode lebih rapi."
+}
+]
+},
+{
+"section": "btn",
+"btn": [
+{"text": "Menu","modal": "web/side/modules","icon": "menu"},
+{"text": "Kembali","url": "web/page/modul05","icon": "prev"},
+{"text": "Lanjut","url": "web/page/modul07","icon": "next"}
+]
+}
+
+]
+}

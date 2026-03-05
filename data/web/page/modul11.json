@@ -1,0 +1,98 @@
+{
+"page": "pertemuan_11_async_fetch_api",
+"data": [
+{
+"section": "header",
+"content": {
+"nama": "Pertemuan 11: Asynchronous JS & Fetch API (Integration)",
+"tagline": "Menghubungkan Aplikasi dengan Sumber Data Eksternal",
+"deskripsi": "Transisi dari data lokal statis menuju pengambilan data dinamis. Mahasiswa akan mempelajari konsep Non-blocking I/O melalui Async/Await, Fetch API untuk mengambil file JSON, dan strategi 'Hydration' data ke LocalStorage.",
+"cta": [
+{
+"text": "Pelajari Async/Await",
+"link": "#async-section",
+"icon": "code/24x24/white"
+}
+]
+}
+},
+{
+"section": "stats",
+"caption": "Konsep Asynchronous",
+"content": [
+{
+"id": 1,
+"nama": "Async/Await",
+"isi": "Menangani proses pengambilan data tanpa menghentikan jalannya program utama (non-blocking).",
+"icon": "setting/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 2,
+"nama": "Fetch API",
+"isi": "Standar modern browser untuk melakukan HTTP Request ke file eksternal atau endpoint API.",
+"icon": "search/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 3,
+"nama": "Error Handling",
+"isi": "Penggunaan Try-Catch untuk memastikan aplikasi tetap berjalan meskipun terjadi kegagalan muat data.",
+"icon": "alert/32x32/var(--pColor)",
+"url": "#"
+}
+]
+},
+{
+"section": "progress",
+"caption": "Alur Integrasi Data",
+"content": [
+{
+"label": "Fetch data.json",
+"percent": 100,
+"value": "Initial"
+},
+{
+"label": "Hydration (Sync to LocalStorage)",
+"percent": 85,
+"value": "Logic"
+},
+{
+"label": "Render Dynamic Table",
+"percent": 95,
+"value": "Done"
+}
+]
+},
+{
+"section": "table",
+"caption": "Aktivitas Praktikum (Hands-on)",
+"content": [
+{
+"Aktivitas": "Membuat data.json",
+"Deskripsi Tugas": "Menyusun file JSON eksternal berisi minimal 5 artikel dummy sebagai sumber data awal."
+},
+{
+"Aktivitas": "Fetch Implementation",
+"Deskripsi Tugas": "Menulis fungsi asynchronous untuk melakukan request ke file data.json lokal."
+},
+{
+"Aktivitas": "Logic Integration",
+"Deskripsi Tugas": "Menggabungkan hasil fetch dengan fungsi renderTable() agar data tampil otomatis saat load."
+},
+{
+"Aktivitas": "Conditional Sync",
+"Deskripsi Tugas": "Menambahkan logika pengecekan LocalStorage agar fetch hanya berjalan jika storage kosong."
+}
+]
+},{
+"section": "btn",
+"btn": [
+{"text": "Menu","modal": "web/side/modules","icon": "menu"},
+{"text": "Kembali","url": "web/page/modul10","icon": "prev"},
+{"text": "Lanjut","url": "web/page/modul12","icon": "next"}
+]
+}
+
+]
+}

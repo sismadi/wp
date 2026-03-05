@@ -1,0 +1,150 @@
+    {
+"page": "welcome_screen_pemrograman_web",
+"data": [
+{
+"section": "header",
+"content": {
+  "icon": "code/150/var(--pColor)-var(--pLightColor)",
+  "icon2": "wifi/150/var(--pColor)-var(--pLightColor)",
+
+"nama": "Selamat Datang di Mata Kuliah Pemrograman Web",
+"tagline": "Membangun Masa Depan Digital dengan Vanilla JS & Ekosistem Niura",
+"deskripsi": "Selamat datang, Web Developer masa depan! Di kelas ini, Anda tidak hanya belajar menulis kode, tetapi belajar membangun solusi. Kita akan menjelajahi teknologi client-side modern tanpa bergantung pada framework berat, fokus pada kecepatan, efisiensi, dan persistensi data lokal.",
+"cta": [
+{
+"text": "Mulai Penjelajahan",
+"link": "#pertemuan_1",
+"icon": "home/24x24/white"
+},
+{
+"text": "Lihat RPS",
+"link": "#rps",
+"icon": "book/24x24/white"
+}
+]
+}
+},
+{
+"section": "stats",
+"caption": "Core Learning Pillars",
+"content": [
+{
+"id": 1,
+"nama": "The Foundation",
+"isi": "HTML5 Semantik & CSS3 Modern (Flexbox/Grid) untuk antarmuka yang responsif dan aksesibel.",
+"icon": "code/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 2,
+"nama": "The Logic",
+"isi": "Vanilla JavaScript ES6+ sebagai otak aplikasi untuk manipulasi DOM dan state management.",
+"icon": "setting/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 3,
+"nama": "The Data",
+"isi": "Pengelolaan data JSON dan persistensi menggunakan LocalStorage sebagai database client-side.",
+"icon": "search/32x32/var(--pColor)",
+"url": "#"
+}
+]
+},
+{
+"section": "progress",
+"caption": "Roadmap Menuju Master Web",
+"content": [
+{
+"label": "Basic UI (Pertemuan 1-7)",
+"percent": 45,
+"value": "Fundamentals"
+},
+{
+"label": "Dynamic Data (Pertemuan 9-14)",
+"percent": 90,
+"value": "Advanced JS"
+},
+{
+"label": "Final Project Niura CMS",
+"percent": 100,
+"value": "Expert"
+}
+]
+},
+{
+"section": "btn",
+"btn": [
+{
+"text": "Hubungi Dosen (WA)",
+"url": "[https://wa.me/yourlink](https://www.google.com/search?q=https://wa.me/yourlink)",
+"icon": "whatsapp/24x24/white"
+},
+{
+"text": "Grup Komunitas",
+"url": "#discord",
+"icon": "discord/24x24/white"
+}
+]
+},
+
+    {
+      "section": "stats",
+      "caption": "tentang",
+      "content": [
+        {"icon": "piawai/150", "title": "Filosofi", "desc": "Teknologi yang baik adalah yang tidak terlihat, namun membuat segalanya terasa mungkin." }
+      ]
+    },
+
+    {
+      "section": "stats",
+      "caption": "app",
+      "content": [
+        { "title": "Modul 1", "desc": "Pengenalan Wireless & Mobile Computing.", "icon": "wallet","url":"web/page/modul01" },
+        { "title": "Modul 2", "desc": "Teori dan Operasi Komputasi Bergerak.", "icon": "wallet","url":"web/page/modul02" },
+        { "title": "Modul 3", "desc": "Teknologi Jaringan Nirkabel.", "icon": "wallet","url":"web/page/modul03" },
+        { "title": "Modul 4", "desc": "Mobile Computing & Sistem Operasi Mobile.", "icon": "wallet","url":"web/page/modul04" }
+      ]
+    },
+
+    {
+      "section": "stats",
+      "caption": "app",
+      "content": [
+        { "title": "Modul 5", "desc": "Mobile Computing & OS Lanjutan.", "icon": "wallet","url":"web/page/modul05" },
+        { "title": "Modul 6", "desc": "Teknologi Mobile Web dan Aplikasi.", "icon": "wallet","url":"web/page/modul06" },
+        { "title": "Modul 7", "desc": "Review Komprehensif (Persiapan UTS).", "icon": "wallet","url":"web/page/modul07" },
+        { "title": "UTS", "desc": "Evaluasi Tengah Semester (UTS).", "icon": "wallet","url":"web/page/modul08" }
+      ]
+    },
+    {
+      "section": "stats",
+      "caption": "app",
+      "content": [
+        { "title": "Modul 9", "desc": "Teknologi Mobile Web dan Aplikasi Lanjutan.", "icon": "wallet","url":"web/page/modul09" },
+        { "title": "Modul 10", "desc": "Mobile Database & Data Synchronization (Dasar).", "icon": "wallet","url":"web/page/modul10" },
+        { "title": "Modul 11", "desc": "Mobile Database & Data Synchronization (Lanjutan).", "icon": "wallet","url":"web/page/modul11" },
+        { "title": "Modul 12", "desc": "Mobile User Experience (UX) & Desain Antarmuka Dasar.", "icon": "wallet","url":"web/page/modul12" }
+      ]
+    },
+    {
+      "section": "stats",
+      "caption": "app",
+      "content": [
+        { "title": "Modul 13", "desc": "Mobile UX & Desain Antarmuka Lanjutan.", "icon": "wallet","url":"web/page/modul13" },
+        { "title": "Modul 14", "desc": "Tantangan dan Tren Komputasi Bergerak.", "icon": "wallet","url":"web/page/modul14" },
+        { "title": "Modul 15", "desc": "Review Komprehensif (Persiapan UAS).", "icon": "wallet","url":"web/page/modul15" },
+        { "title": "UTS", "desc": "Evaluasi Akhir Semester (UAS) - Berbasis Proyek.", "icon": "wallet","url":"web/page/modul16" }
+      ]
+    },
+
+
+    {
+      "section": "stats",
+      "caption": "tentangs",
+      "content": [
+        {"icon": "piawai/150", "title": "Filosofi", "desc": "Teknologi yang baik adalah yang tidak terlihat, namun membuat segalanya terasa mungkin." }
+      ]
+    }
+  ]
+}

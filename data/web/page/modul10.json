@@ -1,0 +1,98 @@
+{
+"page": "pertemuan_10_persistensi_data_localstorage",
+"data": [
+{
+"section": "header",
+"content": {
+"nama": "Pertemuan 10: Persistensi Data dengan LocalStorage",
+"tagline": "Membuat Data Tetap Awet Tanpa Database Server",
+"deskripsi": "Solusi untuk data yang hilang saat refresh. Mahasiswa akan mempelajari Web Storage API untuk menyimpan data permanen di sisi klien, teknik serialisasi JSON, dan alur kerja sinkronisasi antara memori JS dengan penyimpanan lokal.",
+"cta": [
+{
+"text": "Eksplorasi Web Storage",
+"link": "#storage-section",
+"icon": "lock/24x24/white"
+}
+]
+}
+},
+{
+"section": "stats",
+"caption": "Konsep LocalStorage",
+"content": [
+{
+"id": 1,
+"nama": "LocalStorage vs Session",
+"isi": "LocalStorage bersifat permanen, sedangkan SessionStorage hilang saat tab ditutup.",
+"icon": "info/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 2,
+"nama": "String Only",
+"isi": "Storage hanya menerima teks. Wajib menggunakan JSON.stringify dan JSON.parse.",
+"icon": "code/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 3,
+"nama": "Storage Methods",
+"isi": "Menguasai setItem, getItem, removeItem, dan clear untuk manajemen data.",
+"icon": "setting/32x32/var(--pColor)",
+"url": "#"
+}
+]
+},
+{
+"section": "progress",
+"caption": "Target Persistensi Data",
+"content": [
+{
+"label": "Implementasi CRUD Sync",
+"percent": 90,
+"value": "Persistent"
+},
+{
+"label": "Serialisasi JSON",
+"percent": 100,
+"value": "Wajib"
+},
+{
+"label": "Auto-Load Logic",
+"percent": 85,
+"value": "Reliable"
+}
+]
+},
+{
+"section": "table",
+"caption": "Aktivitas Praktikum (Hands-on)",
+"content": [
+{
+"Aktivitas": "Simple Storage",
+"Deskripsi Tugas": "Menyimpan data string sederhana dan membukanya kembali setelah refresh halaman."
+},
+{
+"Aktivitas": "Object Persistence",
+"Deskripsi Tugas": "Menyimpan object artikel ke tab Application > Local Storage pada DevTools."
+},
+{
+"Aktivitas": "Array Sync",
+"Deskripsi Tugas": "Membuat fungsi saveData() untuk sinkronisasi array artikel ke storage secara berkala."
+},
+{
+"Aktivitas": "Auto-Load",
+"Deskripsi Tugas": "Logika pengambilan data otomatis dari storage saat window.onload."
+}
+]
+},{
+"section": "btn",
+"btn": [
+{"text": "Menu","modal": "web/side/modules","icon": "menu"},
+{"text": "Kembali","url": "web/page/modul09","icon": "prev"},
+{"text": "Lanjut","url": "web/page/modul11","icon": "next"}
+]
+}
+
+]
+}

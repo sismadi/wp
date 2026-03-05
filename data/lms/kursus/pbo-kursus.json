@@ -1,0 +1,31 @@
+{
+  "status": "success",
+  "nama": "kursus PBO",
+  "data": [
+    {
+      "id": "m01",
+      "name": "Membuat Kursus dan materi",
+      "desc": "aturan dan prompt AI",
+      "materi": "renderPage",
+      "icon": "svg/32",
+      "url": "data/modul/pbo/pbo-m01.json"
+    },
+    {
+      "id": "m02",
+      "name": "Kuis mambangun Kuis ",
+      "desc": "membuat kuis, dan membuat materi menggunakan generator + berbantuan AI,aturan dan prompt AI",
+      "materi": "renderPdf",
+      "icon": "code/32",
+      "url": "data/pdf/pdf02.pdf"
+    },
+    {
+      "id": "m03",
+      "name": "membuat sertifikat",
+      "desc": "membuat daftar peserta yang sertifikat dan cara akses ke sertifikat,aturan dan prompt AI",
+      "materi": "renderMp4",
+      "icon": "code/32",
+      "url": "data/video/m03.mp4"
+
+    }
+  ]
+}

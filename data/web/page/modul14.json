@@ -1,0 +1,99 @@
+{
+"page": "pertemuan_14_integrasi_dan_finalisasi",
+"data": [
+{
+"section": "header",
+"content": {
+"nama": "Pertemuan 14: Integrasi Proyek & Finalisasi Modul Niura",
+"tagline": "Tahap Akhir: Menuju Standar Pengembangan Profesional",
+"deskripsi": "Fase finalisasi teknis sebelum presentasi besar. Mahasiswa akan melakukan konsolidasi struktur file, penguatan identitas visual Niura, optimasi UX dengan fitur pencarian real-time, dan pembersihan kode (refactoring).",
+"cta": [
+{
+"text": "Finalisasi Proyek",
+"link": "#final-polish",
+"icon": "check/24x24/white"
+}
+]
+}
+},
+{
+"section": "stats",
+"caption": "Checklist Finalisasi",
+"content": [
+{
+"id": 1,
+"nama": "Branding",
+"isi": "Konsistensi palet warna, logo, dan tipografi pada seluruh modul antarmuka.",
+"icon": "user/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 2,
+"nama": "Search & Filter",
+"isi": "Implementasi fitur cari artikel menggunakan metode .filter() secara real-time.",
+"icon": "search/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 3,
+"nama": "Refactoring",
+"isi": "Pembersihan console.log, modularitas fungsi, dan penambahan komentar penjelasan.",
+"icon": "code/32x32/var(--pColor)",
+"url": "#"
+}
+]
+},
+{
+"section": "progress",
+"caption": "Kesiapan Produksi (QA)",
+"content": [
+{
+"label": "Modularitas Folder Assets",
+"percent": 100,
+"value": "Ready"
+},
+{
+"label": "Uji Responsivitas Mobile",
+"percent": 95,
+"value": "Stable"
+},
+{
+"label": "Dokumentasi README.md",
+"percent": 80,
+"value": "Finalizing"
+}
+]
+},
+{
+"section": "table",
+"caption": "Aktivitas Praktikum (Final Polish)",
+"content": [
+{
+"Aktivitas": "Search Logic",
+"Deskripsi Tugas": "Membuat fungsi searchArticle() untuk render ulang tabel berdasarkan keyword."
+},
+{
+"Aktivitas": "Branding Sync",
+"Deskripsi Tugas": "Sinkronisasi skema warna aplikasi dengan identitas visual merek Niura."
+},
+{
+"Aktivitas": "Code Refactoring",
+"Deskripsi Tugas": "Merapikan struktur kode dan menghapus skrip yang tidak lagi digunakan."
+},
+{
+"Aktivitas": "Final Flow Test",
+"Deskripsi Tugas": "Pengujian menyeluruh alur Fetch -> Create -> Read -> Update -> Delete -> Search."
+}
+]
+},
+{
+"section": "btn",
+"btn": [
+{"text": "Menu","modal": "web/side/modules","icon": "menu"},
+{"text": "Kembali","url": "web/page/modul13","icon": "prev"},
+{"text": "Lanjut","url": "web/page/modul15","icon": "next"}
+]
+}
+
+]
+}

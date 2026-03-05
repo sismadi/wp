@@ -1,0 +1,45 @@
+{
+  "data": [
+    {
+      "section": "header",
+      "caption": "Materi Kuliah",
+      "content": {
+        "nama": "Universitas IPWIJA",
+        "icon": "logo/ipwija",
+        "avatars": "data/web/kampus_merdeka.jpg",
+        "tagline": "Pemrograman Berbasis Objek: Kelas dan Objek dalam JavaScript",
+        "deskripsi": "Modul ini membahas konsep dasar OOP dalam JavaScript, mulai dari definisi blueprint hingga implementasi sintaks ES6 yang modern dan efisien.",
+        "cta": [
+          { "text": "Mulai Belajar", "link": "#definisi", "icon": "book/32x32" },
+          { "text": "Praktikum Visual", "link": "#praktikum", "icon": "web/32x32" }
+        ]
+      }
+    },
+    {
+      "section": "stats",
+      "caption": "Konsep Utama OOP",
+      "content": [
+        {
+          "icon": "blueprint/150",
+          "title": "Definisi Kelas",
+          "desc": "Kelas (class) adalah cetak biru atau template yang digunakan untuk mendefinisikan properti dan metode untuk membuat sebuah objek[cite: 132]."
+        },
+        {
+          "icon": "object/150",
+          "title": "Instansiasi Objek",
+          "desc": "Objek adalah salinan konkret (instansiasi) dari kelas yang memiliki data nyata berdasarkan struktur blueprint-nya[cite: 133, 135]."
+        },
+        {
+          "icon": "efficiency/150",
+          "title": "Modern ES6 Syntax",
+          "desc": "Sintaks ES6 Class lebih rapi dan efisien karena metode otomatis ditambahkan ke prototype, bukan diduplikasi di setiap objek[cite: 140, 170]."
+        },
+        {
+          "icon": "constructor/150",
+          "title": "Constructor & Method",
+          "desc": "Constructor menginisialisasi properti saat objek dibuat, sementara Method memberikan perilaku (behavior) pada objek tersebut[cite: 197, 242]."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+"page": "pertemuan_5_javascript_dom_manipulasi",
+"data": [
+{
+"section": "header",
+"content": {
+"nama": "Pertemuan 5: Vanilla JavaScript Dasar & Manipulasi DOM",
+"tagline": "Memberikan 'Otak' dan Logika pada Antarmuka Statis",
+"deskripsi": "Titik balik dari desain menuju pemrograman. Mahasiswa akan mempelajari dasar Vanilla JS, teknik seleksi elemen DOM, dan cara menangani interaksi pengguna melalui Event Listeners.",
+"cta": [
+{
+"text": "Mulai Coding JS",
+"link": "#js-section",
+"icon": "code/24x24/white"
+}
+]
+}
+},
+{
+"section": "stats",
+"caption": "Konsep Inti JavaScript",
+"content": [
+{
+"id": 1,
+"nama": "DOM Selection",
+"isi": "Menghubungkan kode JS dengan elemen HTML menggunakan getElementById dan querySelector.",
+"icon": "search/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 2,
+"nama": "Event Listeners",
+"isi": "Merespons aksi pengguna seperti klik dan submit untuk memicu fungsi tertentu.",
+"icon": "user/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 3,
+"nama": "Data Handling",
+"isi": "Mengambil nilai input pengguna melalui properti .value untuk diolah lebih lanjut.",
+"icon": "book/32x32/var(--pColor)",
+"url": "#"
+}
+]
+},
+{
+"section": "progress",
+"caption": "Target Pembelajaran Logika",
+"content": [
+{
+"label": "Koneksi Script (Internal/External)",
+"percent": 100,
+"value": "Wajib"
+},
+{
+"label": "DOM Manipulation Skills",
+"percent": 85,
+"value": "Interaktif"
+},
+{
+"label": "Event Handling (Prevent Default)",
+"percent": 90,
+"value": "Penting"
+}
+]
+},
+{
+"section": "table",
+"caption": "Aktivitas Praktikum (Hands-on)",
+"content": [
+{
+"Aktivitas": "Hello Console",
+"Deskripsi Tugas": "Menggunakan console.log() untuk verifikasi koneksi file JavaScript."
+},
+{
+"Aktivitas": "Seleksi Elemen",
+"Deskripsi Tugas": "Menghubungkan variabel JS ke form input dan tabel HTML (Pertemuan 2)."
+},
+{
+"Aktivitas": "Ambil Data Input",
+"Deskripsi Tugas": "Menangkap data ketikan pengguna dan menampilkannya di console saat tombol diklik."
+},
+{
+"Aktivitas": "Manipulasi Sederhana",
+"Deskripsi Tugas": "Mengubah properti CSS (seperti display modal) melalui event click."
+}
+]
+},
+{
+"section": "btn",
+"btn": [
+{"text": "Menu","modal": "web/side/modules","icon": "menu"},
+{"text": "Kembali","url": "web/page/modul04","icon": "prev"},
+{"text": "Lanjut","url": "web/page/modul06","icon": "next"}
+]
+}
+
+]
+}

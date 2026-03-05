@@ -1,0 +1,13 @@
+{
+  "data": [
+    {
+      "section": "csv",
+      "caption": "Kuis Interaktif Sejarah Indonesia",
+      "url": "data/kuis/kuis.json",
+      "btn": [
+        { "text": "Kembali ke Materi", "url": "materi_list" }
+      ]
+    }
+
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "page": "uas_evaluasi_akhir_semester_niura",
+  "data": [
+    {
+      "section": "header",
+      "content": {
+        "nama": "Evaluasi Akhir Semester (UAS): Pengembangan CMS",
+        "tagline": "Ujian Praktik Mandiri: Membangun Single Page Application (SPA) Modern",
+        "deskripsi": "UAS ini menguji kemampuan integrasi menyeluruh mulai dari arsitektur SPA, manajemen state JavaScript, hingga persistensi data LocalStorage. Anda ditantang untuk membangun sistem CMS fungsional dengan standar industri.",
+        "cta": [
+          {
+            "text": "Unduh Lembar Soal",
+            "link": "#download-soal",
+            "icon": "book/24x24/white"
+          }
+        ]
+      }
+    },
+    {
+      "section": "stats",
+      "caption": "Spesifikasi Proyek UAS",
+      "content": [
+        {
+          "id": 1,
+          "nama": "Arsitektur SPA",
+          "isi": "Navigasi antar menu (Dashboard, List, Add) wajib berjalan tanpa reload halaman.",
+          "icon": "menu/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "id": 2,
+          "nama": "Full CRUD",
+          "isi": "Implementasi lengkap Create, Read, Update, dan Delete dengan validasi data.",
+          "icon": "code/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "id": 3,
+          "nama": "Data Hydration",
+          "isi": "Sinkronisasi otomatis antara Fetch API (data.json) dan LocalStorage.",
+          "icon": "setting/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "section": "progress",
+      "caption": "Target Kualitas Aplikasi",
+      "content": [
+        {
+          "label": "Logika JavaScript (ES6+)",
+          "percent": 100,
+          "value": "Advanced"
+        },
+        {
+          "label": "UI/UX & Responsivitas",
+          "percent": 90,
+          "value": "Niura Theme"
+        },
+        {
+          "label": "Kerapian & Dokumentasi Kode",
+          "percent": 85,
+          "value": "Modular"
+        }
+      ]
+    },
+    {
+      "section": "table",
+      "caption": "Rubrik Penilaian Kematangan (100%)",
+      "content": [
+        {
+          "No": "1",
+          "Kriteria Penilaian": "Logika CRUD",
+          "Bobot": "30%",
+          "Deskripsi": "Fungsi simpan, baca, ubah, dan hapus berjalan sempurna."
+        },
+        {
+          "No": "2",
+          "Kriteria Penilaian": "Arsitektur SPA",
+          "Bobot": "20%",
+          "Indikator": "Navigasi mulus, preventDefault() pada semua link/form."
+        },
+        {
+          "No": "3",
+          "Kriteria Penilaian": "Persistensi Data",
+          "Bobot": "20%",
+          "Indikator": "Penggunaan LocalStorage & Fetch API yang tepat."
+        },
+        {
+          "No": "4",
+          "Kriteria Penilaian": "UI/UX & Responsivitas",
+          "Bobot": "20%",
+          "Indikator": "Desain profesional, rapi di mobile, skema warna Niura."
+        },
+        {
+          "No": "5",
+          "Kriteria Penilaian": "Kualitas Kode",
+          "Bobot": "10%",
+          "Indikator": "Kode modular, komentar jelas, struktur folder rapi."
+        }
+      ]
+    },
+
+{
+"section": "btn",
+"btn": [
+{"text": "Menu","modal": "web/side/modules","icon": "menu"},
+{"text": "Kembali","url": "web/page/modul15","icon": "prev"}
+]
+}
+
+]
+}

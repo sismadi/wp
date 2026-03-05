@@ -1,0 +1,23 @@
+{
+  "status": "success",
+  "data": [
+    {
+      "set": "1",
+      "question": "HTML adalah singkatan dari?",
+      "choice_a": "Hyper Text Markup Language",
+      "choice_b": "HighText Machine Language",
+      "choice_c": "Hyper Tabular Markup Language",
+      "choice_d": "None of these",
+      "answer": "Hyper Text Markup Language"
+    },
+    {
+      "set": "1",
+      "question": "Siapa penemu WWW?",
+      "choice_a": "Elon Musk",
+      "choice_b": "Bill Gates",
+      "choice_c": "Tim Berners-Lee",
+      "choice_d": "Mark Zuckerberg",
+      "answer": "Tim Berners-Lee"
+    }
+  ]
+}

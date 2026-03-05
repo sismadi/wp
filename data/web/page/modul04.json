@@ -1,0 +1,99 @@
+{
+"page": "pertemuan_4_manipulasi_layout_dan_komponen",
+"data": [
+{
+"section": "header",
+"content": {
+"nama": "Pertemuan 4: Manipulasi Layout & Komponen Antarmuka Dinamis",
+"tagline": "Menjembatani Desain Statis dengan Interaktivitas Komponen Modern",
+"deskripsi": "Mahasiswa akan mempelajari teknik manipulasi elemen visual untuk mendukung alur kerja CRUD.\nFokus pada pembuatan Modal, sistem Notifikasi (Toast), dan transisi halus untuk meningkatkan User Experience.",
+"cta": [
+{
+"text": "Pelajari Komponen Modal",
+"link": "#modal-section",
+"icon": "layout/24x24/white"
+}
+]
+}
+},
+{
+"section": "stats",
+"caption": "Fitur Antarmuka Lanjutan",
+"content": [
+{
+"id": 1,
+"nama": "Modal System",
+"isi": "Penggunaan position: fixed dan z-index untuk jendela edit data tanpa pindah halaman.",
+"icon": "lock/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 2,
+"nama": "Toast Notification",
+"isi": "Umpan balik visual sukses/error menggunakan @keyframes untuk animasi slide-in.",
+"icon": "alert/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 3,
+"nama": "Visual Hierarchy",
+"isi": "Pengaturan tipografi dan kontras warna untuk branding proyek yang konsisten.",
+"icon": "user/32x32/var(--pColor)",
+"url": "#"
+}
+]
+},
+{
+"section": "progress",
+"caption": "Target Pengembangan Komponen",
+"content": [
+{
+"label": "Struktur & Overlay Modal",
+"percent": 100,
+"value": "Done"
+},
+{
+"label": "Animasi Notifikasi CSS",
+"percent": 85,
+"value": "Keyframes"
+},
+{
+"label": "Responsivitas Komponen",
+"percent": 90,
+"value": "Centered"
+}
+]
+},
+{
+"section": "table",
+"caption": "Aktivitas Praktikum (Hands-on)",
+"content": [
+{
+"Aktivitas": "Membuat Modal",
+"Detail Tugas": "Menyusun HTML modal form edit dan menyembunyikannya dengan CSS (display: none)."
+},
+{
+"Aktivitas": "Overlay Effect",
+"Detail Tugas": "Membuat efek latar belakang gelap/blur saat modal aktif."
+},
+{
+"Aktivitas": "Styling Notifikasi",
+"Detail Tugas": "Mendesain toast di pojok kanan atas dengan variasi warna sukses/error."
+},
+{
+"Aktivitas": "Custom Scrollbar",
+"Detail Tugas": "Modifikasi tampilan scrollbar agar selaras dengan estetika modern aplikasi."
+}
+]
+},
+{
+"section": "btn",
+"btn": [
+{"text": "Menu","modal": "web/side/modules","icon": "menu"},
+{"text": "Kembali","url": "web/page/modul03","icon": "prev"},
+{"text": "Lanjut","url": "web/page/modul05","icon": "next"}
+]
+}
+
+]
+}

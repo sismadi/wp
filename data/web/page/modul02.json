@@ -1,0 +1,99 @@
+{
+  "page": "pertemuan_2_html5_struktur_dan_semantik",
+  "data": [
+    {
+      "section": "header",
+      "content": {
+        "nama": "Pertemuan 2: HTML5 — Struktur Data & Semantik Antarmuka",
+        "tagline": "Membangun Fondasi Antarmuka Aplikasi CRUD Modern",
+        "deskripsi": "Fokus pada HTML5 sebagai penyedia input dan wadah render data untuk sistem LocalStorage.\nMahasiswa akan mempelajari anatomi dokumen, elemen semantik, dan optimasi form.",
+        "cta": [
+          {
+            "text": "Lihat Dokumentasi HTML5",
+            "link": "#materi-inti",
+            "icon": "book/24x24/white"
+          }
+        ]
+      }
+    },
+    {
+      "section": "stats",
+      "caption": "Komponen Utama Aplikasi",
+      "content": [
+        {
+          "id": 1,
+          "nama": "Semantik Layout",
+          "isi": "Penggunaan <header>, <main>, dan <section> untuk struktur kode yang bersih.",
+          "icon": "menu/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "id": 2,
+          "nama": "Formulir Input",
+          "isi": "Jantung CRUD: Menggunakan ID unik untuk integrasi JavaScript dan LocalStorage.",
+          "icon": "user/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "id": 3,
+          "nama": "Data Display",
+          "isi": "Pemanfaatan <table> dan <tbody> dinamis sebagai wadah render data.",
+          "icon": "code/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "section": "progress",
+      "caption": "Target Kompetensi Praktikum",
+      "content": [
+        {
+          "label": "Pemahaman Boilerplate HTML5",
+          "percent": 100,
+          "value": "Wajib"
+        },
+        {
+          "label": "Implementasi Form & Input ID",
+          "percent": 90,
+          "value": "Krusial"
+        },
+        {
+          "label": "Struktur Tabel Dinamis",
+          "percent": 80,
+          "value": "Persiapan JS"
+        }
+      ]
+    },
+    {
+      "section": "table",
+      "caption": "Rincian Aktivitas Praktikum (Hands-on)",
+      "content": [
+        {
+          "Aktivitas": "Struktur Dasar",
+          "Detail Tugas": "Membuat file index.html dengan boilerplate HTML5 lengkap."
+        },
+        {
+          "Aktivitas": "Pembuatan Form",
+          "Detail Tugas": "Membuat form input manajemen artikel (Judul & Konten)."
+        },
+        {
+          "Aktivitas": "Wadah Tabel",
+          "Detail Tugas": "Membuat kerangka tabel kosong dengan ID pada <tbody>."
+        },
+        {
+          "Aktivitas": "Identifikasi ID",
+          "Detail Tugas": "Memberikan atribut id unik pada input dan tombol aksi."
+        }
+      ]
+    },
+    {
+    "section": "btn",
+    "btn": [
+    {"text": "Menu","modal": "web/side/modules","icon": "menu"},
+    {"text": "Kembali","url": "web/page/modul01","icon": "prev"},
+    {"text": "Lanjut","url": "web/page/modul03","icon": "next"}
+    ]
+    }
+
+  ]
+}

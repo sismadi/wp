@@ -1,0 +1,98 @@
+{
+"page": "pertemuan_9_advanced_js_json",
+"data": [
+{
+"section": "header",
+"content": {
+"nama": "Pertemuan 9: Advanced JavaScript — Object, Array, & JSON",
+"tagline": "Menguasai Arsitektur Data Modern untuk Aplikasi Client-Side",
+"deskripsi": "Memasuki paruh kedua semester dengan fokus pada pengelolaan data kompleks. Mahasiswa akan mendalami struktur Array of Objects, transformasi JSON, dan metode manipulasi array modern yang menjadi standar industri.",
+"cta": [
+{
+"text": "Eksplorasi Metode Array",
+"link": "#array-methods",
+"icon": "code/24x24/white"
+}
+]
+}
+},
+{
+"section": "stats",
+"caption": "Pilar Pengolahan Data",
+"content": [
+{
+"id": 1,
+"nama": "JSON Mastery",
+"isi": "Memahami JSON.stringify() dan JSON.parse() untuk pertukaran data antar sistem.",
+"icon": "book/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 2,
+"nama": "Array Methods",
+"isi": "Penggunaan .map(), .filter(), dan .find() untuk manipulasi data yang deklaratif dan efisien.",
+"icon": "menu/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 3,
+"nama": "Unique ID",
+"isi": "Teknik pembuatan ID unik menggunakan Date.now() sebagai pengganti Auto-Increment database.",
+"icon": "lock/32x32/var(--pColor)",
+"url": "#"
+}
+]
+},
+{
+"section": "progress",
+"caption": "Target Kompetensi Data",
+"content": [
+{
+"label": "Transformasi JSON",
+"percent": 100,
+"value": "Fluent"
+},
+{
+"label": "Higher-Order Functions",
+"percent": 85,
+"value": "Advanced"
+},
+{
+"label": "Struktur Object Complex",
+"percent": 90,
+"value": "Structured"
+}
+]
+},
+{
+"section": "table",
+"caption": "Aktivitas Praktikum (Hands-on)",
+"content": [
+{
+"Aktivitas": "Object Construction",
+"Deskripsi Tugas": "Membuat object artikel dengan properti id, title, content, dan createdAt."
+},
+{
+"Aktivitas": "JSON Conversion",
+"Deskripsi Tugas": "Konversi object ke string (stringify) dan kembali ke object (parse) via console."
+},
+{
+"Aktivitas": "Array Filtering",
+"Deskripsi Tugas": "Menghapus data spesifik dari array dummy menggunakan metode .filter() berdasarkan ID."
+},
+{
+"Aktivitas": "Data Mapping",
+"Deskripsi Tugas": "Transformasi array data menjadi baris HTML dinamis menggunakan metode .map()."
+}
+]
+},{
+"section": "btn",
+"btn": [
+{"text": "Menu","modal": "web/side/modules","icon": "menu"},
+{"text": "Kembali","url": "web/page/modul08","icon": "prev"},
+{"text": "Lanjut","url": "web/page/modul10","icon": "next"}
+]
+}
+
+]
+}

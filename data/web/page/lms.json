@@ -1,0 +1,28 @@
+{"data":[
+  {
+    "section": "header",
+    "caption": "",
+    "content": {
+      "nama": "LMS",
+      "icon": "edu/150",
+      "tagline": "Fullstack Developer • AI Engineer • Data Scientist",
+      "deskripsi": "Akselerasi karier teknologi Anda dengan kurikulum berbasis industri yang dirancang oleh praktisi berpengalaman.",
+      "cta": [
+        { "text": "Lihat Kursus", "link": "#dashboard", "icon": "code/32x32" },
+        { "text": "Konsultasi", "link": "https://wa.me/xxx", "icon": "whatsapp/32x32" }
+      ]
+    }
+  },
+
+  {
+    "section": "stats",
+    "caption": "app1",
+    "content": [
+      { "title": "Kursus", "desc": " kerja.", "icon": "app","modal":"templates/layout/3" },
+      { "title": "Kuis", "desc": " kerja.", "icon": "menu","modal":"templates/layout/4" },
+      { "title": "Serifikat", "desc": " kerja.", "icon": "mail","modal":"templates/color/2" }
+    ]
+  }
+
+]
+}

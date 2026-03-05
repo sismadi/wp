@@ -1,0 +1,98 @@
+{
+"page": "pertemuan_7_review_dan_integrasi",
+"data": [
+{
+"section": "header",
+"content": {
+"nama": "Pertemuan 7: Review Materi & Integrasi Prototipe Antarmuka",
+"tagline": "Konsolidasi Kompetensi Front-End Sebelum Evaluasi Tengah Semester",
+"deskripsi": "Sesi penguatan untuk menyatukan HTML5, CSS3, dan Vanilla JS menjadi satu kesatuan aplikasi. Fokus pada sinkronisasi komponen UI (Modal/Toast) dengan logika program serta persiapan simulasi proyek Niura.",
+"cta": [
+{
+"text": "Review Checklist UTS",
+"link": "#uts-prep",
+"icon": "check/24x24/white"
+}
+]
+}
+},
+{
+"section": "stats",
+"caption": "Pilar Integrasi Aplikasi",
+"content": [
+{
+"id": 1,
+"nama": "Data Flow",
+"isi": "Sinkronisasi alur data dari Input Form menuju Render Tabel secara dinamis.",
+"icon": "menu/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 2,
+"nama": "Code Optimization",
+"isi": "Pemisahan tanggung jawab fungsi (clean code) dan pencegahan duplikasi render DOM.",
+"icon": "setting/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 3,
+"nama": "Visual Polish",
+"isi": "Finalisasi branding dan penghalusan transisi pada komponen antarmuka.",
+"icon": "instagram/32x32/var(--pColor)",
+"url": "#"
+}
+]
+},
+{
+"section": "progress",
+"caption": "Kesiapan Proyek Niura",
+"content": [
+{
+"label": "Struktur & Semantik HTML5",
+"percent": 100,
+"value": "Solid"
+},
+{
+"label": "Responsivitas & Styling CSS",
+"percent": 100,
+"value": "Polished"
+},
+{
+"label": "Logika Interaksi JavaScript",
+"percent": 90,
+"value": "Integrated"
+}
+]
+},
+{
+"section": "table",
+"caption": "Aktivitas 'The Integration Lab'",
+"content": [
+{
+"Aktivitas": "Bug Fixing Session",
+"Deskripsi Tugas": "Identifikasi dan perbaikan kesalahan logika pada tombol aksi edit/hapus."
+},
+{
+"Aktivitas": "Styling Polish",
+"Deskripsi Tugas": "Menghaluskan transisi CSS pada modal dan notifikasi toast."
+},
+{
+"Aktivitas": "Data Flow Test",
+"Deskripsi Tugas": "Uji coba validasi input dan injeksi data unik ke dalam tabel."
+},
+{
+"Aktivitas": "Documentation",
+"Deskripsi Tugas": "Pemberian komentar pada kode untuk penjelasan alur logika fungsi."
+}
+]
+},{
+"section": "btn",
+"btn": [
+{"text": "Menu","modal": "web/side/modules","icon": "menu"},
+{"text": "Kembali","url": "web/page/modul06","icon": "prev"},
+{"text": "Lanjut","url": "web/page/modul08","icon": "next"}
+]
+}
+
+]
+}

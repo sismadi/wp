@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "section": "header",
+      "caption": "",
+      "content": {
+        "nama": "PBO",
+        "icon": "code/150x150/skyblue/0.5",
+        "tagline": "Pemrograman Berorientasi Objek",
+        "deskripsi": "Akselerasi karier teknologi Anda dengan kurikulum berbasis industri yang dirancang oleh praktisi berpengalaman.",
+        "cta": [
+          { "text": "Lihat Kursus", "link": "#dashboard", "icon": "code/32x32" },
+          { "text": "Konsultasi", "link": "https://wa.me/xxx", "icon": "whatsapp/32x32" }
+        ]
+      }
+    },
+
+    {
+      "section": "kursus",
+      "caption": "PBO",
+      "url": "data/kursus/pbo-kursus.json",
+      "btn": [
+        { "text": "Modul Intro", "url": "lms/web/kursus/pbo-m01" }
+      ]
+    }
+
+  ]
+}

@@ -1,0 +1,102 @@
+{
+"page": "pertemuan_1_pengenalan_ekosistem_web",
+"data": [
+{
+"section": "header",
+"content": {
+"nama": "Pertemuan 1: Pengenalan Ekosistem Web & Kontrak Perkuliahan",
+"tagline": "Modern Web Development dengan Vanilla JS & LocalStorage",
+"deskripsi": "Mahasiswa memahami aturan main, sistem penilaian, dan cakupan materi selama satu semester ke depan.\nFokus pada penguasaan materi teknis dan praktikum dengan output akhir aplikasi web fungsional menggunakan sistem CRUD.",
+"cta": [
+{
+"text": "Mulai Belajar",
+"link": "#materi",
+"icon": "book/24x24/white"
+}
+]
+}
+},
+{
+"section": "stats",
+"caption": "Konsep Dasar & Arsitektur",
+"content": [
+{
+"id": 1,
+"nama": "Client-Side",
+"isi": "Fokus pada kode yang berjalan di browser (HTML, CSS, JS) dengan data di LocalStorage.",
+"icon": "code/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 2,
+"nama": "Server-Side",
+"isi": "Kode di server (Node.js/PHP) dengan penyimpanan database terpusat (MySQL).",
+"icon": "setting/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 3,
+"nama": "Data Flow",
+"isi": "Pertukaran data menggunakan format JSON yang ringan dan efisien.",
+"icon": "info/32x32/var(--pColor)",
+"url": "#"
+}
+]
+},
+{
+"section": "progress",
+"caption": "Development Environment Setup",
+"content": [
+{
+"label": "Text Editor (VS Code)",
+"percent": 100,
+"value": "Installed"
+},
+{
+"label": "Web Browser (Chrome/Edge)",
+"percent": 100,
+"value": "Ready"
+},
+{
+"label": "Version Control (Git)",
+"percent": 50,
+"value": "Optional"
+}
+]
+},
+{
+"section": "table",
+"caption": "Ringkasan Aktivitas Kelas",
+"content": [
+{
+"Aktivitas": "Penyampaian RPS",
+"Deskripsi": "Penjelasan visi dan misi mata kuliah Pemrograman Web.",
+"Durasi": "30 Menit"
+},
+{
+"Aktivitas": "Kuliah Teori",
+"Deskripsi": "Pengenalan sejarah web, protokol HTTP, dan evolusi JavaScript.",
+"Durasi": "40 Menit"
+},
+{
+"Aktivitas": "Praktikum Setup",
+"Deskripsi": "Instalasi VS Code, pengenalan fitur inspeksi elemen pada browser.",
+"Durasi": "30 Menit"
+},
+{
+"Aktivitas": "Diskusi",
+"Deskripsi": "Tanya jawab mengenai kontrak perkuliahan dan sistem penilaian.",
+"Durasi": "20 Menit"
+}
+]
+},
+{
+"section": "btn",
+"btn": [
+{"text": "Menu","modal": "web/side/modules","icon": "menu"},
+{"text": "Lanjut","url": "web/page/modul02","icon": "next"}
+]
+}
+
+]
+}

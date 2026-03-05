@@ -1,0 +1,32 @@
+{
+  "data": [
+
+    {
+      "section": "header",
+      "caption": "",
+      "content": {
+        "nama": "Kursus",
+        "icon": "edu/150x150",
+        "tagline": "Pemrograman • AI Engineer • Data Scientist",
+        "deskripsi": "Akselerasi karier teknologi Anda dengan kurikulum berbasis industri yang dirancang oleh praktisi berpengalaman.",
+        "cta": [
+          { "text": "Lihat Kursus", "link": "#dashboard", "icon": "code/32x32" },
+          { "text": "Konsultasi", "link": "https://wa.me/xxx", "icon": "whatsapp/32x32" }
+        ]
+      }
+    },
+
+
+    {
+      "section": "stats",
+      "caption": "Inventaris Aset",
+      "control": "multi",
+      "filter": "kategori",
+      "content": [
+        { "id": 1, "kategori": "Web", "nama": "PBO", "isi": "45", "icon": "edu/150x150", "url": "kursus/page/pbo" },
+        { "id": 2, "kategori": "Pemrograman", "nama": "Admin", "isi": "512", "icon": "code/150x150", "url": "kursus/page/admin" },
+        { "id": 3, "kategori": "Matematika", "nama": "Berhitung", "isi": "15", "icon": "setting/150x150", "url": "lms/kuis/kuis/1" }
+      ]
+    }
+  ]
+}

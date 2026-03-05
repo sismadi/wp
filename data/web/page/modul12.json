@@ -1,0 +1,98 @@
+{
+"page": "pertemuan_12_implementasi_crud_create_read",
+"data": [
+{
+"section": "header",
+"content": {
+"nama": "Pertemuan 12: Implementasi CRUD — Create & Read",
+"tagline": "Menyatukan Logika Interaktif dan Persistensi Data",
+"deskripsi": "Tahap penyatuan seluruh teknologi: HTML Form, DOM, JSON, dan LocalStorage. Fokus pada siklus hidup data mulai dari pengambilan awal (Read) hingga penambahan data baru (Create) yang tersimpan secara permanen.",
+"cta": [
+{
+"text": "Mulai Build CRUD",
+"link": "#crud-section",
+"icon": "code/24x24/white"
+}
+]
+}
+},
+{
+"section": "stats",
+"caption": "Siklus Hidup Data (C-R)",
+"content": [
+{
+"id": 1,
+"nama": "Initial Read",
+"isi": "Mengambil data dari LocalStorage atau fallback ke data.json saat aplikasi pertama kali dimuat.",
+"icon": "search/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 2,
+"nama": "Data Creation",
+"isi": "Menangkap input, membungkus dalam Object dengan Unique ID, dan menambahkannya ke Array.",
+"icon": "close/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 3,
+"nama": "Re-Render",
+"isi": "Memperbarui tampilan tabel secara otomatis setiap kali ada perubahan pada sumber data.",
+"icon": "menu/32x32/var(--pColor)",
+"url": "#"
+}
+]
+},
+{
+"section": "progress",
+"caption": "Target Fungsionalitas",
+"content": [
+{
+"label": "Fungsi renderTable()",
+"percent": 100,
+"value": "Dynamic"
+},
+{
+"label": "Form Event Handling",
+"percent": 90,
+"value": "PreventDefault"
+},
+{
+"label": "Storage Synchronization",
+"percent": 95,
+"value": "Permanent"
+}
+]
+},
+{
+"section": "table",
+"caption": "Aktivitas Praktikum (Hands-on)",
+"content": [
+{
+"Aktivitas": "Logic: fetchData",
+"Deskripsi Tugas": "Cek LocalStorage; jika kosong, fetch data.json dan inisialisasi penyimpanan."
+},
+{
+"Aktivitas": "Logic: renderTable",
+"Deskripsi Tugas": "Membersihkan <tbody> dan melakukan mapping array menjadi baris tabel baru."
+},
+{
+"Aktivitas": "Logic: addData",
+"Deskripsi Tugas": "Menangkap submit form, generate ID via Date.now(), dan push ke array data."
+},
+{
+"Aktivitas": "Integration Test",
+"Deskripsi Tugas": "Uji alur: Input -> Simpan -> Render -> Refresh -> Data Tetap Ada."
+}
+]
+},{
+"section": "btn",
+"btn": [
+{"text": "Menu","modal": "web/side/modules","icon": "menu"},
+{"text": "Kembali","url": "web/page/modul11","icon": "prev"},
+{"text": "Lanjut","url": "web/page/modul13","icon": "next"}
+]
+}
+
+]
+}

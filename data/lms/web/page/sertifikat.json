@@ -1,0 +1,13 @@
+{
+  "data": [
+    {
+            "section": "cert",
+            "caption": "Verifikasi Sertifikat Digital",
+            "json_url": "data/cert/sertifikat.json",
+            "btn": [
+              { "text": "Kembali ke Dashboard", "url": "dashboard" }
+            ]
+        }
+
+  ]
+}

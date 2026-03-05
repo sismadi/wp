@@ -1,0 +1,109 @@
+{
+"page": "pertemuan_15_final_review_demo",
+"data": [
+{
+"section": "header",
+"content": {
+"nama": "Pertemuan 15: Final Review & Demo Project 'Article System'",
+"tagline": "Puncak Validasi Karya dan Demonstrasi Aplikasi CRUD",
+"deskripsi": "Satu semester perjalanan teknis berakhir di sini. Mahasiswa akan melakukan pengujian akhir (QA), demonstrasi fitur secara langsung, dan pembuktian persistensi data Article System yang telah dibangun.",
+"cta": [
+{
+"text": "Mulai Demo Proyek",
+"link": "#demo-section",
+"icon": "user/24x24/white"
+}
+]
+}
+},
+{
+"section": "stats",
+"caption": "Kilas Balik Kompetensi",
+"content": [
+{
+"id": 1,
+"nama": "Dynamic Presentation",
+"isi": "Transformasi HTML/CSS statis menjadi antarmuka yang responsif dan interaktif.",
+"icon": "menu/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 2,
+"nama": "Client-Side Logic",
+"isi": "Pengelolaan data mandiri menggunakan Vanilla JS dan LocalStorage API.",
+"icon": "code/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 3,
+"nama": "Data Integration",
+"isi": "Sinkronisasi data eksternal via Fetch API dengan penyimpanan lokal permanen.",
+"icon": "search/32x32/var(--pColor)",
+"url": "#"
+}
+]
+},
+{
+"section": "progress",
+"caption": "Kriteria Kelulusan Proyek",
+"content": [
+{
+"label": "Fungsionalitas CRUD",
+"percent": 100,
+"value": "Wajib"
+},
+{
+"label": "Persistensi LocalStorage",
+"percent": 100,
+"value": "Lolos"
+},
+{
+"label": "Responsivitas UI/UX",
+"percent": 90,
+"value": "Stabil"
+}
+]
+},
+{
+"section": "table",
+"caption": "Rubrik Penilaian Final",
+"content": [
+{
+"Komponen Penilaian": "Kualitas CRUD",
+"Bobot": "40%",
+"Indikator": "Fungsi C-R-U-D berjalan 100% tanpa error di console."
+},
+{
+"Komponen Penilaian": "Integrasi Data",
+"Bobot": "20%",
+"Indikator": "Berhasil sinkronisasi Fetch API dan LocalStorage."
+},
+{
+"Komponen Penilaian": "User Experience (UX)",
+"Bobot": "20%",
+"Indikator": "Navigasi jelas, responsif, dan mudah digunakan."
+},
+{
+"Komponen Penilaian": "Visual Branding",
+"Bobot": "10%",
+"Indikator": "Konsistensi identitas (warna, logo, font)."
+},
+{
+"Komponen Penilaian": "Presentasi",
+"Bobot": "10%",
+"Indikator": "Mampu menjelaskan alur logika kode dengan fasih."
+}
+]
+},
+
+{
+"section": "btn",
+"btn": [
+{"text": "Menu","modal": "web/side/modules","icon": "menu"},
+{"text": "Kembali","url": "web/page/modul14","icon": "prev"},
+{"text": "Lanjut","url": "web/page/modul16","icon": "next"}
+]
+}
+
+]
+}

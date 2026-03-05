@@ -1,0 +1,109 @@
+{
+"page": "profile_pembelajaran_mahasiswa",
+"data": [
+{
+"section": "header",
+"content": {
+"nama": "Profil Developer: Learning Path",
+"tagline": "Identitas Digital dan Pencapaian Kompetensi Mahasiswa",
+"deskripsi": "Halaman ini merangkum identitas akademik, progres teknis, dan portofolio yang telah Anda bangun selama satu semester. Gunakan profil ini sebagai cermin kesiapan Anda dalam industri pengembangan web modern.",
+"cta": [
+{
+"text": "Edit Profil",
+"link": "#setting",
+"icon": "user/24x24/white"
+}
+]
+}
+},
+{
+"section": "stats",
+"caption": "Statistik Capaian Teknis",
+"content": [
+{
+"id": 1,
+"nama": "Lines of Code",
+"isi": "± 1.200 baris Vanilla JS yang telah ditulis dan dioptimasi.",
+"icon": "code/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 2,
+"nama": "Modul Selesai",
+"isi": "14 dari 15 modul pertemuan telah berhasil diintegrasikan.",
+"icon": "book/32x32/var(--pColor)",
+"url": "#"
+},
+{
+"id": 3,
+"nama": "Proyek Niura",
+"isi": "Status: Siap Demo (Final Polish sedang berlangsung).",
+"icon": "check/32x32/green",
+"url": "#"
+}
+]
+},
+{
+"section": "progress",
+"caption": "Skor Kompetensi (Skill Radar)",
+"content": [
+{
+"label": "Semantic HTML5",
+"percent": 95,
+"value": "Expert"
+},
+{
+"label": "Modern CSS (Layouting)",
+"percent": 88,
+"value": "Advanced"
+},
+{
+"label": "JS DOM & Events",
+"percent": 92,
+"value": "Expert"
+},
+{
+"label": "Asynchronous & Storage",
+"percent": 75,
+"value": "Intermediate"
+}
+]
+},
+{
+"section": "table",
+"caption": "Riwayat Aktivitas & Submission",
+"content": [
+{
+"Tugas": "UTS: Modul Statis",
+"Nilai": "A",
+"Catatan": "Struktur DOM sangat rapi."
+},
+{
+"Tugas": "Tugas 10: Sync LocalStorage",
+"Nilai": "A-",
+"Catatan": "Validasi JSON perlu diperkuat."
+},
+{
+"Tugas": "Tugas 12: Fetch API Integration",
+"Nilai": "A",
+"Catatan": "Berhasil melakukan hydration data."
+}
+]
+},
+{
+"section": "btn",
+"btn": [
+{
+"text": "Unduh Transkrip Progres",
+"url": "#download",
+"icon": "info/24x24/white"
+},
+{
+"text": "Lihat Portofolio GitHub",
+"url": "[https://github.com/](https://github.com/)",
+"icon": "linkedin/24x24/white"
+}
+]
+}
+]
+}
