@@ -7,8 +7,8 @@
   "icon": "code/150/var(--pColor)-var(--pLightColor)",
   "icon2": "wifi/150/var(--pColor)-var(--pLightColor)",
 
-"nama": "Selamat Datang di Mata Kuliah Pemrograman Web",
-"tagline": "Membangun Masa Depan Digital dengan Vanilla JS & Ekosistem Niura",
+"nama": "Pemrograman Web",
+"tagline": "Kode MK: IMP306 | Kurikulum Informatika",
 "deskripsi": "Selamat datang, Web Developer masa depan! Di kelas ini, Anda tidak hanya belajar menulis kode, tetapi belajar membangun solusi. Kita akan menjelajahi teknologi client-side modern tanpa bergantung pada framework berat, fokus pada kecepatan, efisiensi, dan persistensi data lokal.",
 "cta": [
 {
