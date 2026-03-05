@@ -66,7 +66,7 @@
 "value": "Advanced JS"
 },
 {
-"label": "Final Project Niura CMS",
+"label": "Final Project CMS",
 "percent": 100,
 "value": "Expert"
 }
@@ -134,7 +134,7 @@
         { "title": "Modul 13", "desc": "Mobile UX & Desain Antarmuka Lanjutan.", "icon": "wallet","url":"web/page/modul13" },
         { "title": "Modul 14", "desc": "Tantangan dan Tren Komputasi Bergerak.", "icon": "wallet","url":"web/page/modul14" },
         { "title": "Modul 15", "desc": "Review Komprehensif (Persiapan UAS).", "icon": "wallet","url":"web/page/modul15" },
-        { "title": "UTS", "desc": "Evaluasi Akhir Semester (UAS) - Berbasis Proyek.", "icon": "wallet","url":"web/page/modul16" }
+        { "title": "UAS", "desc": "Evaluasi Akhir Semester (UAS) - Berbasis Proyek.", "icon": "wallet","url":"web/page/modul16" }
       ]
     },
 
