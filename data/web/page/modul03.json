@@ -1,0 +1,124 @@
+{
+  "page": "pertemuan_3_css3_desain_dan_layout",
+  "data": [
+    {
+      "section": "header",
+      "content": {
+        "nama": "Pertemuan 3: CSS3 — Desain Antarmuka & Tata Letak Modern",
+        "tagline": "Kode yang benar tapi tampil buruk tidak akan digunakan siapapun.",
+        "deskripsi": "Fokus pada estetika, User Experience, dan tata letak modern menggunakan Flexbox serta Grid.\nMahasiswa membangun identitas visual untuk aplikasi CRUD yang adaptif di semua ukuran layar.",
+        "cta": [
+          { "text": "Eksplorasi Flexbox", "link": "#layout-section", "icon": "code" }
+        ]
+      }
+    },
+
+    {
+      "section": "stats",
+      "caption": "Mengapa CSS Bukan Sekedar 'Dekorasi'?",
+      "content": [
+        {
+          "nama": "UX adalah Fungsionalitas",
+          "isi": "Tombol yang sulit ditekan, form yang membingungkan, atau tabel yang tidak bisa dibaca di mobile — ini bukan masalah estetika. Ini masalah fungsional yang membuat aplikasi tidak terpakai.",
+          "icon": "alert/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Mobile-First Bukan Pilihan",
+          "isi": "62% traffic web global berasal dari mobile. Membangun untuk desktop lalu menyesuaikan ke mobile selalu lebih sulit. Mulai dari mobile, scale-up ke desktop.",
+          "icon": "info/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "CSS Variables = Design System",
+          "isi": "Mendefinisikan warna dan font di :root adalah cara profesional. Mengubah tema aplikasi cukup ganti 3 variabel — bukan ratusan baris kode tersebar.",
+          "icon": "code/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "code",
+      "caption": "Setup CSS: Variables, Reset & Base Style",
+      "lang": "css",
+      "colorPreset": "dracula",
+      "lineNumbers": true,
+      "code": "/* ===== CSS VARIABLES — Design System Niura ===== */\n:root {\n  --primary     : #2563eb;   /* Biru utama */\n  --primary-dark: #1d4ed8;   /* Hover state */\n  --danger      : #dc2626;   /* Tombol hapus */\n  --success     : #16a34a;   /* Notifikasi sukses */\n  --bg          : #f8fafc;   /* Background halaman */\n  --surface     : #ffffff;   /* Background card/form */\n  --text        : #1e293b;   /* Teks utama */\n  --text-muted  : #64748b;   /* Teks sekunder */\n  --border      : #e2e8f0;   /* Border elemen */\n  --radius      : 8px;       /* Border radius global */\n  --shadow      : 0 2px 8px rgba(0,0,0,.08);\n  --font        : 'Segoe UI', system-ui, sans-serif;\n}\n\n/* ===== RESET ===== */\n*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }\nbody { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; }\n\n/* ===== TIPOGRAFI ===== */\nh1 { font-size: 1.5rem; font-weight: 700; color: var(--primary); }\nh2 { font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; }"
+    },
+
+    {
+      "section": "code",
+      "caption": "Flexbox untuk Layout Form & Tabel",
+      "lang": "css",
+      "colorPreset": "nord",
+      "lineNumbers": true,
+      "code": "/* ===== LAYOUT UTAMA ===== */\nheader {\n  background: var(--surface);\n  border-bottom: 1px solid var(--border);\n  padding: 1rem 2rem;\n  display: flex;\n  align-items: center;\n  gap: 1rem;\n  box-shadow: var(--shadow);\n}\n\nmain {\n  max-width: 900px;\n  margin: 2rem auto;\n  padding: 0 1rem;\n  display: flex;\n  flex-direction: column;\n  gap: 1.5rem;\n}\n\n/* ===== FORM STYLING ===== */\n#form-section {\n  background: var(--surface);\n  border-radius: var(--radius);\n  padding: 1.5rem;\n  box-shadow: var(--shadow);\n}\n\n#form-section form {\n  display: flex;\n  flex-direction: column;\n  gap: 0.75rem;\n}\n\ninput, textarea {\n  padding: 0.6rem 0.875rem;\n  border: 1px solid var(--border);\n  border-radius: var(--radius);\n  font-size: 0.9rem;\n  outline: none;\n  transition: border-color 0.2s;\n}\n\ninput:focus, textarea:focus {\n  border-color: var(--primary); /* Visual feedback saat aktif */\n}\n\n/* ===== TOMBOL ===== */\nbutton {\n  padding: 0.6rem 1.25rem;\n  border: none;\n  border-radius: var(--radius);\n  cursor: pointer;\n  font-weight: 600;\n  transition: background 0.2s, transform 0.1s;\n}\n\nbutton:active { transform: scale(0.97); } /* Micro-interaction klik */\n\n.btn-primary  { background: var(--primary); color: #fff; }\n.btn-primary:hover  { background: var(--primary-dark); }\n.btn-danger   { background: var(--danger);  color: #fff; }"
+    },
+
+    {
+      "section": "code",
+      "caption": "Tabel Responsif & Media Queries",
+      "lang": "css",
+      "colorPreset": "monokai",
+      "lineNumbers": true,
+      "code": "/* ===== TABEL DATA ===== */\n#table-section {\n  background: var(--surface);\n  border-radius: var(--radius);\n  padding: 1.5rem;\n  box-shadow: var(--shadow);\n  overflow-x: auto; /* Scroll horizontal di mobile */\n}\n\ntable { width: 100%; border-collapse: collapse; }\nth    { background: var(--bg); font-weight: 600; text-align: left; }\nth, td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); }\n\n/* Zebra striping untuk keterbacaan */\ntbody tr:nth-child(even) { background: #f8fafc; }\ntbody tr:hover { background: #eff6ff; transition: background 0.15s; }\n\n/* ===== RESPONSIVITAS (Mobile First) ===== */\n/* Base style sudah untuk mobile */\n\n/* Tablet ke atas (≥ 640px) */\n@media (min-width: 640px) {\n  #form-section form { flex-direction: row; flex-wrap: wrap; }\n  #form-section form input { flex: 1; min-width: 200px; }\n  textarea { flex: 100%; }\n}\n\n/* Desktop ke atas (≥ 1024px) */\n@media (min-width: 1024px) {\n  main { padding: 0 2rem; }\n  h1   { font-size: 1.75rem; }\n}"
+    },
+
+    {
+      "section": "stats",
+      "caption": "3 Prinsip Desain Modern",
+      "content": [
+        {
+          "nama": "Box Model Mastery",
+          "isi": "Semua elemen adalah kotak. Kuasai padding (ruang dalam), border, dan margin (ruang luar). Kesalahan margin/padding adalah sumber 80% masalah layout.",
+          "icon": "lock/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Flex & Grid",
+          "isi": "Flexbox untuk layout satu dimensi (baris atau kolom). Grid untuk layout dua dimensi. Untuk form dan tabel kita — Flexbox sudah lebih dari cukup.",
+          "icon": "menu/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Visual Feedback",
+          "isi": "Setiap aksi pengguna harus mendapat respons visual: hover berubah warna, focus menampilkan border, klik menampilkan scale-down. Ini membuat UI terasa hidup dan profesional.",
+          "icon": "check/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "progress",
+      "caption": "Kompetensi Estetika UI",
+      "content": [
+        { "label": "CSS Variables sebagai Design System", "percent": 100, "value": "Wajib Kuasai" },
+        { "label": "Implementasi Flexbox untuk layout form", "percent": 95, "value": "Utama" },
+        { "label": "Styling komponen tabel dengan zebra striping", "percent": 85, "value": "Detail" },
+        { "label": "Media queries Mobile-First", "percent": 75, "value": "Adaptif" }
+      ]
+    },
+
+    {
+      "section": "table",
+      "caption": "Panduan Praktikum CSS",
+      "content": [
+        { "Aktivitas": "Buat style.css", "Detail Tugas": "Setup CSS Variables di :root dan global reset. Ini pondasi seluruh tampilan — jangan skip." },
+        { "Aktivitas": "Layout Header & Main", "Detail Tugas": "Styling header dan main container menggunakan Flexbox. Target: form ter-center dan rapi." },
+        { "Aktivitas": "Dekorasi Form & Tabel", "Detail Tugas": "Styling input, tombol, dan tabel. Tambahkan focus state pada input dan hover state pada tombol." },
+        { "Aktivitas": "Responsivitas", "Detail Tugas": "Tambahkan media query untuk breakpoint 640px dan 1024px. Test di DevTools Device Mode." }
+      ]
+    },
+
+    {
+      "section": "btn",
+      "btn": [
+        { "text": "Menu", "modal": "web/side/modules", "icon": "menu" },
+        { "text": "Kembali", "url": "web/page/modul02", "icon": "prev" },
+        { "text": "Lanjut", "url": "web/page/modul04", "icon": "next" }
+      ]
+    }
+  ]
+}

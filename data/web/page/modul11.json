@@ -1,0 +1,124 @@
+{
+  "page": "pertemuan_11_async_fetch_api",
+  "data": [
+    {
+      "section": "header",
+      "content": {
+        "nama": "Pertemuan 11: Asynchronous JS & Fetch API",
+        "tagline": "Aplikasi yang 'membekukan' layar saat loading data adalah aplikasi yang belum memahami async.",
+        "deskripsi": "Transisi dari data lokal statis menuju pengambilan data dinamis dari file eksternal.\nMahasiswa mempelajari Non-blocking I/O melalui Async/Await, Fetch API, dan strategi Hydration data ke LocalStorage.",
+        "cta": [
+          { "text": "Pelajari Async/Await", "link": "#async-section", "icon": "code" }
+        ]
+      }
+    },
+
+    {
+      "section": "stats",
+      "caption": "Mengapa JavaScript Butuh 'Asynchronous'?",
+      "content": [
+        {
+          "nama": "JavaScript adalah Single-Thread",
+          "isi": "JS hanya bisa menjalankan satu tugas sekaligus. Tanpa async, mengambil data dari file/API akan membekukan seluruh halaman sampai data selesai diunduh. Bayangkan toko yang menutup pintunya saat kasir sedang menelepon.",
+          "icon": "alert/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Async/Await: Syntax yang Manusiawi",
+          "isi": "Async/await bukan fitur baru — ia adalah sintaks yang membuat kode asynchronous terlihat seperti kode synchronous biasa. Lebih mudah dibaca, lebih mudah debug, dan sudah menjadi standar industri.",
+          "icon": "info/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Pola Hydration: Fetch Sekali, Simpan Selamanya",
+          "isi": "Kita tidak fetch data.json setiap kali halaman dibuka — hanya saat LocalStorage kosong. Setelah data ada di storage, tidak perlu fetch lagi. Ini strategi yang sama digunakan PWA modern.",
+          "icon": "code/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "code",
+      "caption": "Sync vs Async — Analogi yang Jelas",
+      "lang": "js",
+      "colorPreset": "dracula",
+      "lineNumbers": true,
+      "code": "// ===== SYNCHRONOUS — Blokir sampai selesai =====\n// Seperti antri di kasir: tidak bisa ngobrol sampai giliran selesai\nconsole.log('1. Mulai');\nconst data = fetchDataSync(); // Membekukan browser sampai data datang!\nconsole.log('2. Data:', data);\nconsole.log('3. Selesai');\n// Output: 1 → (browser beku) → 2 → 3\n\n// ===== ASYNCHRONOUS dengan Async/Await =====\n// Seperti pesan makanan online: Anda bisa ngobrol sambil menunggu\nasync function loadData() {\n  console.log('1. Mulai muat data...');\n  try {\n    const response = await fetch('./data.json'); // Tunggu tanpa membekukan\n    const data     = await response.json();      // Parse JSON-nya\n    console.log('3. Data diterima:', data);\n  } catch (error) {\n    console.error('Gagal memuat data:', error.message);\n  }\n}\n\nconsole.log('2. Baris ini jalan TANPA menunggu fetch!');\nloadData();\n// Output: 1 → 2 → (menunggu di background) → 3"
+    },
+
+    {
+      "section": "code",
+      "caption": "Strategi Hydration — Implementasi Lengkap",
+      "lang": "js",
+      "colorPreset": "nord",
+      "lineNumbers": true,
+      "code": "// ===== POLA HYDRATION YANG BENAR =====\n// Prinsip: Fetch hanya jika LocalStorage kosong\n\nasync function initApp() {\n  const stored = localStorage.getItem(STORAGE_KEY);\n\n  if (stored) {\n    // Data sudah ada di LocalStorage — langsung pakai\n    articles = JSON.parse(stored);\n    console.log(`Memuat ${articles.length} artikel dari LocalStorage`);\n  } else {\n    // LocalStorage kosong — fetch data awal dari file JSON\n    console.log('LocalStorage kosong. Fetching data.json...');\n    try {\n      const response = await fetch('./data.json');\n\n      if (!response.ok) {\n        throw new Error(`HTTP Error: ${response.status}`);\n      }\n\n      articles = await response.json();\n\n      // Simpan ke LocalStorage agar tidak perlu fetch lagi\n      saveToStorage();\n      console.log(`${articles.length} artikel berhasil dimuat dan disimpan.`);\n\n    } catch (err) {\n      console.error('Gagal fetch data.json:', err.message);\n      articles = []; // Fallback: mulai kosong\n    }\n  }\n\n  renderTable(); // Render setelah data siap\n}\n\n// Ganti: let articles = loadFromStorage(); renderTable();\n// Dengan:\ninitApp(); // Panggil di akhir file"
+    },
+
+    {
+      "section": "code",
+      "caption": "Struktur data.json yang Benar",
+      "lang": "json",
+      "colorPreset": "github-dark",
+      "lineNumbers": true,
+      "code": "[\n  {\n    \"id\": 1706000001000,\n    \"title\": \"Pengenalan HTML5 Semantik\",\n    \"content\": \"HTML5 membawa tag semantik yang membantu browser dan developer memahami struktur halaman dengan lebih baik.\",\n    \"createdAt\": \"23/03/2026\"\n  },\n  {\n    \"id\": 1706000002000,\n    \"title\": \"CSS Flexbox untuk Layout Modern\",\n    \"content\": \"Flexbox adalah model layout CSS yang memudahkan pembuatan antarmuka responsif tanpa hack float.\",\n    \"createdAt\": \"23/03/2026\"\n  },\n  {\n    \"id\": 1706000003000,\n    \"title\": \"Vanilla JavaScript DOM Manipulation\",\n    \"content\": \"Manipulasi DOM adalah cara JavaScript berinteraksi dengan elemen HTML di halaman secara dinamis.\",\n    \"createdAt\": \"23/03/2026\"\n  }\n]"
+    },
+
+    {
+      "section": "stats",
+      "caption": "3 Konsep Asynchronous",
+      "content": [
+        {
+          "nama": "async/await",
+          "isi": "Tambahkan async sebelum function dan await sebelum operasi yang butuh waktu. await hanya bisa digunakan di dalam fungsi async.",
+          "icon": "setting/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Fetch API",
+          "isi": "fetch(url) mengirim HTTP request dan mengembalikan Promise. .json() adalah method response yang juga async — butuh await juga.",
+          "icon": "search/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Try-Catch",
+          "isi": "Bungkus kode async dalam try-catch untuk menangkap error jaringan. Tanpa ini, error yang tidak tertangkap bisa crash seluruh aplikasi tanpa pesan yang jelas.",
+          "icon": "alert/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "progress",
+      "caption": "Alur Integrasi Data",
+      "content": [
+        { "label": "Buat data.json dengan minimal 3 artikel dummy", "percent": 100, "value": "Step 1 — Data Source" },
+        { "label": "Implementasikan initApp() dengan pola hydration", "percent": 85, "value": "Step 2 — Core Logic" },
+        { "label": "Test: clear storage → refresh → data muncul dari fetch", "percent": 90, "value": "Step 3 — Validasi" },
+        { "label": "Test: refresh tanpa clear → data dari storage (tidak fetch)", "percent": 85, "value": "Step 4 — Efisiensi" }
+      ]
+    },
+
+    {
+      "section": "table",
+      "caption": "Aktivitas Praktikum",
+      "content": [
+        { "Aktivitas": "Buat data.json", "Deskripsi Tugas": "Buat file data.json dengan 5 artikel dummy. Validasi JSON di jsonlint.com sebelum digunakan." },
+        { "Aktivitas": "Fungsi initApp()", "Deskripsi Tugas": "Implementasikan pola hydration: cek storage → jika kosong fetch → simpan → render." },
+        { "Aktivitas": "Test Hydration", "Deskripsi Tugas": "Clear LocalStorage via DevTools, refresh halaman. Konfirmasi data muncul dari data.json. Refresh lagi — sekarang dari storage." },
+        { "Aktivitas": "Error Handling", "Deskripsi Tugas": "Ganti URL fetch dengan URL salah. Konfirmasi try-catch menampilkan pesan error di console tanpa crash aplikasi." }
+      ]
+    },
+
+    {
+      "section": "btn",
+      "btn": [
+        { "text": "Menu", "modal": "web/side/modules", "icon": "menu" },
+        { "text": "Kembali", "url": "web/page/modul10", "icon": "prev" },
+        { "text": "Lanjut", "url": "web/page/modul12", "icon": "next" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "page": "pertemuan_15_final_review_demo",
+  "data": [
+    {
+      "section": "header",
+      "content": {
+        "nama": "Pertemuan 15: Final Review & Demo Project 'Article System'",
+        "tagline": "Satu semester perjalanan teknis — sekarang waktunya membuktikannya.",
+        "deskripsi": "Mahasiswa melakukan pengujian akhir (QA), demonstrasi fitur secara langsung, dan pembuktian persistensi data Article System yang telah dibangun selama satu semester.",
+        "cta": [
+          { "text": "Mulai Demo Proyek", "link": "#demo-section", "icon": "user" }
+        ]
+      }
+    },
+
+    {
+      "section": "stats",
+      "caption": "Apa yang Harus Bisa Anda Demonstrasikan?",
+      "content": [
+        {
+          "nama": "Persistensi yang Nyata",
+          "isi": "Demonstrasikan: tambah artikel → tutup browser → buka kembali → data masih ada. Ini satu momen yang membuktikan LocalStorage berjalan. Penonton yang terkesan adalah penilai yang puas.",
+          "icon": "check/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Jelaskan Logikanya, Bukan Hanya Kliknya",
+          "isi": "Penilai ingin tahu apakah Anda paham kode Anda sendiri. Saat demo, jelaskan: 'Ini saveToStorage() yang sinkronkan array ke LocalStorage setiap kali ada perubahan.' Bukan hanya: 'Ini tombol simpan.'",
+          "icon": "info/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Tunjukkan DevTools",
+          "isi": "Buka Application → LocalStorage saat demo. Tunjukkan bahwa data tersimpan sebagai JSON. Ini bukti teknis yang membedakan developer yang paham dari developer yang hanya copy-paste.",
+          "icon": "search/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "table",
+      "caption": "Rubrik Penilaian Final",
+      "content": [
+        { "Komponen": "Kualitas CRUD", "Bobot": "40%", "Indikator": "Fungsi C-R-U-D berjalan 100% tanpa error di console. Search real-time berfungsi." },
+        { "Komponen": "Integrasi Data", "Bobot": "20%", "Indikator": "Fetch API + LocalStorage + Hydration berjalan sesuai pola yang diajarkan." },
+        { "Komponen": "User Experience", "Bobot": "20%", "Indikator": "Responsif di mobile, toast notification, modal edit, empty state, konfirmasi hapus." },
+        { "Komponen": "Visual Branding", "Bobot": "10%", "Indikator": "CSS Variables konsisten, tipografi rapi, warna Niura seragam." },
+        { "Komponen": "Presentasi", "Bobot": "10%", "Indikator": "Mampu menjelaskan fungsi-fungsi kunci: renderTable, saveToStorage, initApp, setupEdit." }
+      ]
+    },
+
+    {
+      "section": "stats",
+      "caption": "Kilas Balik Perjalanan Semester",
+      "content": [
+        {
+          "nama": "P1–P4: Foundation",
+          "isi": "Dari HTML boilerplate kosong hingga antarmuka dengan modal dan toast yang beranimasi. 4 pertemuan untuk membangun UI yang benar-benar siap disambungkan ke logika.",
+          "icon": "code/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "P5–P8: JavaScript Logic",
+          "isi": "DOM selection, event listeners, renderTable(), add, delete, validasi — semua fondasi logika CRUD tanpa penyimpanan permanen. Diuji di UTS.",
+          "icon": "setting/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "P9–P14: Data & Integration",
+          "isi": "JSON, LocalStorage, Fetch API, Update, Delete dengan konfirmasi, search real-time, refactoring. Dari aplikasi sementara menjadi aplikasi yang benar-benar berfungsi.",
+          "icon": "search/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "progress",
+      "caption": "Kriteria Kelulusan Proyek",
+      "content": [
+        { "label": "Full CRUD: Create, Read, Update, Delete", "percent": 100, "value": "Wajib" },
+        { "label": "Persistensi LocalStorage + Fetch Hydration", "percent": 100, "value": "Wajib" },
+        { "label": "Responsivitas UI/UX di mobile", "percent": 90, "value": "Stabil" },
+        { "label": "Mampu jelaskan kode saat presentasi", "percent": 85, "value": "Komprehensif" }
+      ]
+    },
+
+    {
+      "section": "btn",
+      "btn": [
+        { "text": "Menu", "modal": "web/side/modules", "icon": "menu" },
+        { "text": "Kembali", "url": "web/page/modul14", "icon": "prev" },
+        { "text": "Lanjut", "url": "web/page/modul16", "icon": "next" }
+      ]
+    }
+  ]
+}

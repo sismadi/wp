@@ -1,0 +1,81 @@
+{
+  "page": "pertemuan_12_implementasi_crud_create_read",
+  "data": [
+    {
+      "section": "header",
+      "content": {
+        "nama": "Pertemuan 12: Implementasi CRUD — Create & Read",
+        "tagline": "Ini bukan sekedar latihan — ini arsitektur aplikasi yang sesungguhnya.",
+        "deskripsi": "Penyatuan seluruh teknologi: HTML Form + DOM + JSON + LocalStorage + Fetch API.\nFokus pada siklus hidup data lengkap dari pengambilan awal (Read) hingga penambahan data baru (Create) yang tersimpan permanen.",
+        "cta": [
+          { "text": "Mulai Build CRUD", "link": "#crud-section", "icon": "code" }
+        ]
+      }
+    },
+
+    {
+      "section": "stats",
+      "caption": "Perbedaan dengan Pertemuan 6 (Array Sementara)",
+      "content": [
+        {
+          "nama": "Dulu: Array di Memori",
+          "isi": "Di P6, data disimpan di array yang hilang saat refresh. Itu prototype. Sekarang array tetap, tapi selalu disinkronkan dengan LocalStorage — data tidak pernah hilang.",
+          "icon": "info/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Sekarang: 3 Lapisan Data",
+          "isi": "Layer 1: Array JavaScript (cepat, di memori). Layer 2: LocalStorage (permanen, di browser). Layer 3: data.json (sumber data awal, di server/file). Ketiganya bekerja bersama.",
+          "icon": "code/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Aturan Besi: Satu Source of Truth",
+          "isi": "Array JavaScript adalah satu-satunya sumber kebenaran. Storage dibaca sekali saat startup, ditulis setiap ada perubahan. Tampilan selalu dirender dari array — tidak pernah dari DOM langsung.",
+          "icon": "lock/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "code",
+      "caption": "Arsitektur Lengkap app.js (Create + Read)",
+      "lang": "js",
+      "colorPreset": "dracula",
+      "lineNumbers": true,
+      "code": "// ============================================================\n// app.js — Article System v2 (dengan LocalStorage + Fetch)\n// ============================================================\n\n// === 1. KONSTANTA ===\nconst STORAGE_KEY = 'niura_articles';\n\n// === 2. DOM ELEMENTS ===\nconst articleForm  = document.getElementById('articleForm');\nconst inputTitle   = document.getElementById('inputTitle');\nconst inputContent = document.getElementById('inputContent');\nconst tableBody    = document.getElementById('tableBody');\nconst toastNotif   = document.getElementById('toastNotif');\n\n// === 3. STATE ===\nlet articles = [];\n\n// === 4. STORAGE HELPERS ===\nfunction saveToStorage() {\n  localStorage.setItem(STORAGE_KEY, JSON.stringify(articles));\n}\n\n// === 5. RENDER ===\nfunction renderTable(data = articles) {\n  tableBody.innerHTML = '';\n  if (data.length === 0) {\n    tableBody.innerHTML = '<tr><td colspan=\"5\" class=\"empty-state\">Belum ada artikel.</td></tr>';\n    return;\n  }\n  data.forEach((a, i) => {\n    const tr = document.createElement('tr');\n    tr.innerHTML = `\n      <td>${i + 1}</td>\n      <td>${escapeHTML(a.title)}</td>\n      <td>${escapeHTML(a.content).substring(0, 80)}...</td>\n      <td>${a.createdAt || '-'}</td>\n      <td class=\"actions\">\n        <button class=\"btn-primary\" onclick=\"setupEdit(${a.id})\">Edit</button>\n        <button class=\"btn-danger\"  onclick=\"deleteArticle(${a.id})\">Hapus</button>\n      </td>`;\n    tableBody.appendChild(tr);\n  });\n}\n\n// Escape HTML untuk mencegah XSS\nfunction escapeHTML(str) {\n  const div = document.createElement('div');\n  div.textContent = str;\n  return div.innerHTML;\n}\n\n// === 6. UTILITIES ===\nfunction clearForm() { inputTitle.value = ''; inputContent.value = ''; inputTitle.focus(); }\nfunction showToast(msg, type = 'success') {\n  toastNotif.textContent = msg;\n  toastNotif.className = `toast ${type} show`;\n  setTimeout(() => toastNotif.classList.remove('show'), 2500);\n}\n\n// === 7. CREATE ===\narticleForm.addEventListener('submit', e => {\n  e.preventDefault();\n  const title   = inputTitle.value.trim();\n  const content = inputContent.value.trim();\n  if (!title)   { showToast('Judul wajib diisi!', 'error'); return; }\n  if (!content) { showToast('Konten wajib diisi!', 'error'); return; }\n\n  articles.push({\n    id: Date.now(), title, content,\n    createdAt: new Date().toLocaleDateString('id-ID')\n  });\n  saveToStorage();\n  renderTable();\n  clearForm();\n  showToast('Artikel berhasil disimpan!');\n});\n\n// === 8. INIT (Fetch + Hydration) ===\nasync function initApp() {\n  const stored = localStorage.getItem(STORAGE_KEY);\n  if (stored) {\n    articles = JSON.parse(stored);\n  } else {\n    try {\n      const res = await fetch('./data.json');\n      articles  = await res.json();\n      saveToStorage();\n    } catch (e) {\n      articles = [];\n    }\n  }\n  renderTable();\n}\n\ninitApp();"
+    },
+
+    {
+      "section": "progress",
+      "caption": "Target Fungsionalitas",
+      "content": [
+        { "label": "initApp() dengan pola hydration berjalan", "percent": 100, "value": "Kunci Aplikasi" },
+        { "label": "Form submit → push → saveToStorage → renderTable", "percent": 95, "value": "Alur Create" },
+        { "label": "Fungsi escapeHTML() mencegah XSS injection", "percent": 80, "value": "Security Dasar" },
+        { "label": "Test alur: tambah → refresh → data masih ada", "percent": 100, "value": "Bukti Berhasil" }
+      ]
+    },
+
+    {
+      "section": "table",
+      "caption": "Aktivitas Praktikum",
+      "content": [
+        { "Aktivitas": "Integrasi initApp", "Deskripsi Tugas": "Ganti inisialisasi lama dengan initApp(). Test: clear storage, refresh, konfirmasi data dari data.json muncul." },
+        { "Aktivitas": "Uji Create", "Deskripsi Tugas": "Tambah 3 artikel baru. Buka DevTools Application → LocalStorage. Konfirmasi data tersimpan sebagai JSON." },
+        { "Aktivitas": "Uji Persistence", "Deskripsi Tugas": "Tambah artikel, tutup tab, buka kembali URL yang sama. Data harus tetap ada." },
+        { "Aktivitas": "Uji Security", "Deskripsi Tugas": "Input judul: <img src=x onerror=alert(1)>. Konfirmasi teks ditampilkan literal — bukan dieksekusi sebagai HTML." }
+      ]
+    },
+
+    {
+      "section": "btn",
+      "btn": [
+        { "text": "Menu", "modal": "web/side/modules", "icon": "menu" },
+        { "text": "Kembali", "url": "web/page/modul11", "icon": "prev" },
+        { "text": "Lanjut", "url": "web/page/modul13", "icon": "next" }
+      ]
+    }
+  ]
+}

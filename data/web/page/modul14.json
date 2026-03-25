@@ -1,0 +1,90 @@
+{
+  "page": "pertemuan_14_integrasi_dan_finalisasi",
+  "data": [
+    {
+      "section": "header",
+      "content": {
+        "nama": "Pertemuan 14: Integrasi Proyek & Finalisasi Modul Niura",
+        "tagline": "Kode yang bekerja adalah versi 1.0. Kode yang bersih, terstruktur, dan terarah adalah versi profesional.",
+        "deskripsi": "Fase finalisasi teknis sebelum presentasi. Fokus pada search real-time, refactoring, branding Niura, dan pengujian menyeluruh — karena kualitas produk diuji dari detailnya.",
+        "cta": [
+          { "text": "Finalisasi Proyek", "link": "#final-polish", "icon": "check" }
+        ]
+      }
+    },
+
+    {
+      "section": "stats",
+      "caption": "Tiga Hal yang Membedakan Proyek Biasa dari Proyek Berkesan",
+      "content": [
+        {
+          "nama": "Search Real-Time",
+          "isi": "Sebuah tabel dengan 20 baris tanpa fitur cari adalah UX yang buruk. Fitur search menggunakan .filter() yang sudah dikuasai — hanya butuh event listener pada input dan renderTable dengan data terfilter.",
+          "icon": "search/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Refactoring = Profesionalisme",
+          "isi": "Hapus semua console.log yang tidak perlu, pastikan tidak ada variabel yang tidak digunakan, dan berikan komentar bermakna. Penilai membaca kode Anda — pastikan ia berbicara sendiri.",
+          "icon": "code/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Konsistensi Branding",
+          "isi": "CSS Variables di :root sudah menjadi design system. Pastikan semua tombol, warna, dan tipografi konsisten. Satu warna yang tidak sesuai tema lebih mengganggu dari satu bug minor.",
+          "icon": "user/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "code",
+      "caption": "Implementasi Search Real-Time",
+      "lang": "js",
+      "colorPreset": "dracula",
+      "lineNumbers": true,
+      "code": "// HTML yang dibutuhkan: tambahkan di atas tabel\n// <input type=\"search\" id=\"searchInput\" placeholder=\"Cari artikel...\">\n\nconst searchInput = document.getElementById('searchInput');\n\n// Event: jalankan setiap karakter yang diketik\nsearchInput.addEventListener('input', function() {\n  const keyword = this.value.trim().toLowerCase();\n  searchArticles(keyword);\n});\n\nfunction searchArticles(keyword) {\n  if (!keyword) {\n    renderTable(articles); // Kosong = tampilkan semua\n    return;\n  }\n\n  const results = articles.filter(a =>\n    a.title.toLowerCase().includes(keyword) ||\n    a.content.toLowerCase().includes(keyword)\n  );\n\n  renderTable(results); // renderTable sudah menerima parameter data\n\n  // Feedback jumlah hasil\n  if (results.length === 0) {\n    tableBody.innerHTML = `\n      <tr><td colspan=\"5\" class=\"empty-state\">\n        Tidak ada artikel yang cocok dengan \"${keyword}\".\n      </td></tr>\n    `;\n  }\n}\n\n// ⚠️ Pastikan renderTable() menerima parameter:\n// function renderTable(data = articles) { ... }\n//                      ↑ Default ke articles jika tidak ada argumen"
+    },
+
+    {
+      "section": "code",
+      "caption": "Checklist Final Kualitas Kode",
+      "lang": "js",
+      "colorPreset": "monokai",
+      "lineNumbers": false,
+      "code": "// ✅ CHECKLIST FINAL SEBELUM DEMO\n\n// === JAVASCRIPT ===\n// ✅ Tidak ada console.log yang tertinggal (kecuali sengaja)\n// ✅ Semua fungsi memiliki komentar singkat\n// ✅ Tidak ada variabel yang dideklarasikan tapi tidak dipakai\n// ✅ Semua operasi CRUD selalu diikuti saveToStorage()\n// ✅ preventDefault() ada di semua form submit handler\n// ✅ editId.value dikonversi dengan Number() sebelum dipakai\n// ✅ escapeHTML() digunakan untuk semua output ke innerHTML\n\n// === HTML ===\n// ✅ Semua ID unik dan konsisten dengan JS\n// ✅ Tag semantik digunakan dengan tepat\n// ✅ Meta viewport ada di <head>\n// ✅ <script> di bagian paling bawah <body>\n\n// === CSS ===\n// ✅ CSS Variables terdefinisi di :root\n// ✅ Media query minimal untuk 640px\n// ✅ Tidak ada nilai warna hardcoded di luar :root\n// ✅ Transisi modal dan toast berjalan mulus\n\n// === UX ===\n// ✅ Empty state ditampilkan saat data kosong\n// ✅ Toast notification muncul setelah setiap aksi\n// ✅ Search real-time berfungsi tanpa reload\n// ✅ Modal menutup saat klik overlay\n// ✅ Form ter-clear dan fokus kembali setelah submit"
+    },
+
+    {
+      "section": "progress",
+      "caption": "Kesiapan Produksi",
+      "content": [
+        { "label": "Search real-time berfungsi di semua field", "percent": 100, "value": "Feature Complete" },
+        { "label": "Refactoring: komentar + hapus console.log", "percent": 95, "value": "Code Quality" },
+        { "label": "Test responsivitas di mobile (DevTools)", "percent": 95, "value": "Mobile Ready" },
+        { "label": "Semua alur CRUD tanpa error di console", "percent": 100, "value": "Bug Free" }
+      ]
+    },
+
+    {
+      "section": "table",
+      "caption": "Aktivitas Praktikum Final Polish",
+      "content": [
+        { "Aktivitas": "Search Logic", "Deskripsi Tugas": "Implementasikan fungsi searchArticles(). Tambahkan input search di HTML. Test dengan keyword yang ada dan yang tidak ada." },
+        { "Aktivitas": "Branding Sync", "Deskripsi Tugas": "Verifikasi semua warna menggunakan CSS Variables. Tidak ada hex color hardcoded di luar :root." },
+        { "Aktivitas": "Code Refactoring", "Deskripsi Tugas": "Hapus semua console.log debug. Tambahkan komentar section di app.js. Verifikasi tidak ada dead code." },
+        { "Aktivitas": "Final Flow Test", "Deskripsi Tugas": "Jalankan skenario: Clear storage → Fetch data → Add → Search → Edit → Delete → Refresh → Verifikasi." }
+      ]
+    },
+
+    {
+      "section": "btn",
+      "btn": [
+        { "text": "Menu", "modal": "web/side/modules", "icon": "menu" },
+        { "text": "Kembali", "url": "web/page/modul13", "icon": "prev" },
+        { "text": "Lanjut", "url": "web/page/modul15", "icon": "next" }
+      ]
+    }
+  ]
+}

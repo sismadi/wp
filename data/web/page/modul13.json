@@ -1,0 +1,115 @@
+{
+  "page": "pertemuan_13_implementasi_crud_update_delete",
+  "data": [
+    {
+      "section": "header",
+      "content": {
+        "nama": "Pertemuan 13: Implementasi CRUD — Update & Delete",
+        "tagline": "Aplikasi yang tidak bisa mengedit dan menghapus data bukan aplikasi — itu hanya form.",
+        "deskripsi": "Tahap penyelesaian siklus CRUD penuh. Mahasiswa mempelajari manipulasi data spesifik via ID unik, Event Delegation, dan pengelolaan editing state untuk fitur Update dan Delete yang robust.",
+        "cta": [
+          { "text": "Selesaikan Siklus CRUD", "link": "#update-delete-section", "icon": "code" }
+        ]
+      }
+    },
+
+    {
+      "section": "stats",
+      "caption": "Dua Tantangan Utama Update & Delete",
+      "content": [
+        {
+          "nama": "Delete: Mudah tapi Berbahaya",
+          "isi": "Delete mudah secara kode (.filter()), tapi berbahaya UX-nya tanpa konfirmasi. Hapus tanpa konfirmasi membuat pengguna tidak bisa kembali. Gunakan modal konfirmasi — bukan window.confirm() bawaan browser.",
+          "icon": "alert/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Update: Butuh State Management",
+          "isi": "Update membutuhkan sistem untuk 'mengingat' artikel mana yang sedang diedit. Solusinya: simpan ID di hidden input saat modal dibuka, gunakan ID itu untuk menemukan dan memperbarui data.",
+          "icon": "info/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Event Delegation untuk Tombol Dinamis",
+          "isi": "Tombol Edit dan Hapus dibuat oleh JavaScript secara dinamis — tidak bisa langsung ditambahkan event listener. Pola onclick inline (onclick='deleteArticle(id)') adalah solusi paling sederhana untuk skala proyek ini.",
+          "icon": "code/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "code",
+      "caption": "Implementasi Update — setupEdit() & updateArticle()",
+      "lang": "js",
+      "colorPreset": "dracula",
+      "lineNumbers": true,
+      "code": "// DOM tambahan yang dibutuhkan untuk modal edit\nconst modalOverlay = document.getElementById('modalOverlay');\nconst editId       = document.getElementById('editId');       // hidden input\nconst editTitle    = document.getElementById('editTitle');\nconst editContent  = document.getElementById('editContent');\nconst btnUpdate    = document.getElementById('btnUpdate');\nconst btnClose     = document.getElementById('btnCloseModal');\n\n// ===== BUKA MODAL DAN ISI DATA =====\nfunction setupEdit(id) {\n  // Cari artikel berdasarkan ID\n  const article = articles.find(a => a.id === id);\n  if (!article) return;\n\n  // Isi form modal dengan data yang ada\n  editId.value      = article.id;       // Simpan ID di hidden input\n  editTitle.value   = article.title;\n  editContent.value = article.content;\n\n  openModal();\n  editTitle.focus(); // Fokus ke field pertama\n}\n\n// ===== SIMPAN PERUBAHAN =====\nbtnUpdate.addEventListener('click', function() {\n  const id      = Number(editId.value); // Konversi kembali ke number!\n  const title   = editTitle.value.trim();\n  const content = editContent.value.trim();\n\n  if (!title || !content) {\n    showToast('Judul dan konten wajib diisi!', 'error');\n    return;\n  }\n\n  // Cari index artikel yang akan diupdate\n  const index = articles.findIndex(a => a.id === id);\n  if (index !== -1) {\n    articles[index].title   = title;    // Perbarui properti\n    articles[index].content = content;\n    articles[index].updatedAt = new Date().toLocaleDateString('id-ID');\n  }\n\n  saveToStorage(); // Simpan perubahan\n  renderTable();\n  closeModal();\n  showToast('Artikel berhasil diperbarui!');\n});\n\n// ===== TUTUP MODAL =====\nfunction openModal()  { modalOverlay.classList.add('active');    }\nfunction closeModal() { modalOverlay.classList.remove('active'); }\nbtnClose.addEventListener('click', closeModal);\nmodalOverlay.addEventListener('click', e => {\n  if (e.target === modalOverlay) closeModal(); // Klik overlay untuk tutup\n});"
+    },
+
+    {
+      "section": "code",
+      "caption": "Implementasi Delete — dengan Modal Konfirmasi",
+      "lang": "js",
+      "colorPreset": "nord",
+      "lineNumbers": true,
+      "code": "// ===== DELETE SEDERHANA (tanpa konfirmasi) =====\nfunction deleteArticle(id) {\n  articles = articles.filter(a => a.id !== id);\n  saveToStorage();\n  renderTable();\n  showToast('Artikel dihapus!');\n}\n\n// ===== DELETE DENGAN KONFIRMASI MODAL (lebih baik) =====\nlet pendingDeleteId = null; // State untuk menyimpan ID yang akan dihapus\n\nfunction confirmDelete(id) {\n  pendingDeleteId = id;\n  openConfirmModal(); // Buka modal konfirmasi terpisah\n}\n\n// Di modal konfirmasi:\nfunction executeDelete() {\n  if (!pendingDeleteId) return;\n\n  articles = articles.filter(a => a.id !== pendingDeleteId);\n  saveToStorage();\n  renderTable();\n  closeConfirmModal();\n  showToast('Artikel berhasil dihapus!');\n\n  pendingDeleteId = null; // Reset state\n}\n\n// ===== UPDATE renderTable() — Ganti tombol hapus =====\n// Ganti: onclick=\"deleteArticle(${a.id})\"\n// Jadi : onclick=\"confirmDelete(${a.id})\"  ← lebih aman\n\n// ⚠️ PENTING: editId.value menyimpan ID sebagai STRING\n// Saat dipakai, konversi ke number dengan Number() atau parseInt()\n// const id = Number(editId.value); // Bukan editId.value langsung!"
+    },
+
+    {
+      "section": "stats",
+      "caption": "3 Pilar Manipulasi Data",
+      "content": [
+        {
+          "nama": "Targeting by ID",
+          "isi": ".find(a => a.id === id) mencari satu item. .findIndex() mencari posisinya. ID disimpan di hidden input (editId) selama modal terbuka — ini 'ingatan' state management kita.",
+          "icon": "search/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Data Filtering untuk Delete",
+          "isi": ".filter() membuat array baru tanpa item yang ID-nya cocok. Lebih aman dari splice() karena tidak memodifikasi array asli secara langsung.",
+          "icon": "close/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Editing State via Hidden Input",
+          "isi": "<input type='hidden' id='editId'> menyimpan ID artikel yang sedang diedit. JavaScript tidak butuh variabel global tambahan — state tersimpan di DOM itu sendiri.",
+          "icon": "setting/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "progress",
+      "caption": "Kompetensi Manipulasi Data",
+      "content": [
+        { "label": "setupEdit(): populate modal form dari .find()", "percent": 85, "value": "Core Update Logic" },
+        { "label": "updateArticle(): modifikasi array via findIndex()", "percent": 85, "value": "Complex tapi Kritis" },
+        { "label": "Modal konfirmasi delete tanpa window.confirm()", "percent": 80, "value": "UX Modern" },
+        { "label": "Number(editId.value) untuk konversi tipe data", "percent": 90, "value": "Bug Prevention" }
+      ]
+    },
+
+    {
+      "section": "table",
+      "caption": "Aktivitas Praktikum",
+      "content": [
+        { "Aktivitas": "setupEdit()", "Deskripsi Tugas": "Implementasikan fungsi yang mengisi form modal dari artikel yang dipilih. Test klik Edit pada setiap baris." },
+        { "Aktivitas": "updateArticle()", "Deskripsi Tugas": "Implementasikan handler btnUpdate: ambil editId, cari dengan findIndex, update properti, save, render." },
+        { "Aktivitas": "Konfirmasi Delete", "Deskripsi Tugas": "Buat modal konfirmasi sederhana dengan tombol 'Ya, Hapus' dan 'Batal'. Ganti deleteArticle langsung." },
+        { "Aktivitas": "Full CRUD Test", "Deskripsi Tugas": "Test alur lengkap: tambah → read → edit → simpan → hapus → konfirmasi → refresh. Semua harus berjalan tanpa error." }
+      ]
+    },
+
+    {
+      "section": "btn",
+      "btn": [
+        { "text": "Menu", "modal": "web/side/modules", "icon": "menu" },
+        { "text": "Kembali", "url": "web/page/modul12", "icon": "prev" },
+        { "text": "Lanjut", "url": "web/page/modul14", "icon": "next" }
+      ]
+    }
+  ]
+}

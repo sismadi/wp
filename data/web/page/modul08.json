@@ -1,0 +1,81 @@
+{
+  "page": "pertemuan_8_uts_praktikum",
+  "data": [
+    {
+      "section": "header",
+      "content": {
+        "nama": "Pertemuan 8: Evaluasi Tengah Semester (UTS)",
+        "tagline": "Bukan ujian hapalan — ini ujian apakah tangan Anda sudah bisa membangun.",
+        "deskripsi": "UTS berbasis Live Coding: membangun modul manajemen data interaktif dalam waktu terbatas.\nSemua yang diuji sudah dipraktikkan di P1–P7. Tidak ada surpris — hanya eksekusi.",
+        "cta": [
+          { "text": "Mulai Ujian", "link": "#start-exam", "icon": "lock" }
+        ]
+      }
+    },
+
+    {
+      "section": "stats",
+      "caption": "Strategi Sukses UTS Live Coding",
+      "content": [
+        {
+          "nama": "Mulai dari HTML, Bukan JS",
+          "isi": "Bangun struktur dan ID dulu — ini fondasi yang JS akan bergantung. Coding JS tanpa HTML siap adalah resep frustasi. Alokasi 60 menit pertama untuk HTML + CSS.",
+          "icon": "info/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Fungsi Kecil, Test Sering",
+          "isi": "Setelah setiap fungsi selesai, test di console. Jangan tulis 100 baris sekaligus baru test. Bug yang ditemukan lebih awal 10x lebih mudah diperbaiki.",
+          "icon": "check/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "F12 adalah Penyelamat",
+          "isi": "DevTools Console menampilkan semua error dengan baris yang tepat. Jika ada yang tidak bekerja, Console adalah tempat pertama yang diperiksa — selalu.",
+          "icon": "search/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "table",
+      "caption": "Rubrik Penilaian UTS",
+      "content": [
+        { "Kriteria": "Struktur HTML", "Bobot": "20%", "Indikator": "Tag semantik lengkap, ID/Class terorganisir, <tbody> kosong siap diisi JS." },
+        { "Kriteria": "Desain CSS", "Bobot": "25%", "Indikator": "CSS Variables terdefinisi, Flexbox/Grid diterapkan, responsif di mobile." },
+        { "Kriteria": "Manipulasi DOM", "Bobot": "30%", "Indikator": "renderTable() akurat, fungsi add/delete berjalan, tidak ada null di console." },
+        { "Kriteria": "Logika & Validasi", "Bobot": "20%", "Indikator": "Validasi input tanpa alert() default, preventDefault() pada form submit." },
+        { "Kriteria": "Kerapian Kode", "Bobot": "5%", "Indikator": "Komentar pada setiap fungsi, penamaan variabel deskriptif, tidak ada code yang kotor." }
+      ]
+    },
+
+    {
+      "section": "code",
+      "caption": "Template Awal yang Boleh Dihafal",
+      "lang": "js",
+      "colorPreset": "github-dark",
+      "lineNumbers": true,
+      "code": "// Template app.js — Struktur minimal yang harus bisa ditulis dari memori\n\n// === DOM ELEMENTS ===\nconst articleForm  = document.getElementById('articleForm');\nconst inputTitle   = document.getElementById('inputTitle');\nconst inputContent = document.getElementById('inputContent');\nconst tableBody    = document.getElementById('tableBody');\nconst modalOverlay = document.getElementById('modalOverlay');\nconst toastNotif   = document.getElementById('toastNotif');\n\n// === STATE ===\nlet articles = [];\n\n// === RENDER ===\nfunction renderTable() {\n  tableBody.innerHTML = '';\n  if (articles.length === 0) {\n    tableBody.innerHTML = '<tr><td colspan=\"4\">Belum ada data.</td></tr>';\n    return;\n  }\n  articles.forEach((a, i) => {\n    const tr = document.createElement('tr');\n    tr.innerHTML = `<td>${i+1}</td><td>${a.title}</td><td>${a.content}</td>\n      <td>\n        <button onclick=\"setupEdit(${a.id})\">Edit</button>\n        <button onclick=\"deleteArticle(${a.id})\">Hapus</button>\n      </td>`;\n    tableBody.appendChild(tr);\n  });\n}\n\n// === UTILITIES ===\nfunction clearForm()  { inputTitle.value = ''; inputContent.value = ''; }\nfunction openModal()  { modalOverlay.classList.add('active');    }\nfunction closeModal() { modalOverlay.classList.remove('active'); }\nfunction showToast(msg, type = 'success') {\n  toastNotif.textContent = msg;\n  toastNotif.className = `toast ${type} show`;\n  setTimeout(() => toastNotif.classList.remove('show'), 2500);\n}\n\n// === CRUD ===\narticleForm.addEventListener('submit', e => {\n  e.preventDefault();\n  const title   = inputTitle.value.trim();\n  const content = inputContent.value.trim();\n  if (!title || !content) { showToast('Isi semua field!', 'error'); return; }\n  articles.push({ id: Date.now(), title, content });\n  renderTable(); clearForm(); showToast('Artikel disimpan!');\n});\n\nfunction deleteArticle(id) {\n  articles = articles.filter(a => a.id !== id);\n  renderTable(); showToast('Artikel dihapus!');\n}\n\n// === INIT ===\nrenderTable();"
+    },
+
+    {
+      "section": "progress",
+      "caption": "Alokasi Waktu UTS (150 Menit)",
+      "content": [
+        { "label": "HTML + CSS Struktur & Styling", "percent": 40, "value": "60 Menit" },
+        { "label": "JavaScript DOM + Logika CRUD", "percent": 50, "value": "75 Menit" },
+        { "label": "Testing, Finishing & Komentar", "percent": 10, "value": "15 Menit" }
+      ]
+    },
+
+    {
+      "section": "btn",
+      "btn": [
+        { "text": "Menu", "modal": "web/side/modules", "icon": "menu" },
+        { "text": "Kembali", "url": "web/page/modul07", "icon": "prev" },
+        { "text": "Lanjut", "url": "web/page/modul09", "icon": "next" }
+      ]
+    }
+  ]
+}

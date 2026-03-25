@@ -1,0 +1,124 @@
+{
+  "page": "pertemuan_4_manipulasi_layout_dan_komponen",
+  "data": [
+    {
+      "section": "header",
+      "content": {
+        "nama": "Pertemuan 4: Manipulasi Layout & Komponen Antarmuka Dinamis",
+        "tagline": "Komponen yang baik terasa invisible — pengguna fokus pada konten, bukan cara menggunakannya.",
+        "deskripsi": "Mempelajari teknik manipulasi visual untuk mendukung alur kerja CRUD.\nFokus pada Modal (jendela edit), Toast Notification (umpan balik aksi), dan transisi CSS yang membuat UI terasa profesional.",
+        "cta": [
+          { "text": "Pelajari Komponen Modal", "link": "#modal-section", "icon": "code" }
+        ]
+      }
+    },
+
+    {
+      "section": "stats",
+      "caption": "Mengapa Kita Butuh Komponen-Komponen Ini?",
+      "content": [
+        {
+          "nama": "Modal = Edit Tanpa Pindah Halaman",
+          "isi": "Tanpa modal, proses edit harus membuka halaman baru atau mengisi ulang form di tempat berbeda. Modal mempertahankan konteks pengguna — ia tetap 'di dalam' tabel saat mengedit.",
+          "icon": "info/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Toast = Konfirmasi yang Tidak Mengganggu",
+          "isi": "Browser alert() memblokir seluruh interaksi sampai di-klik. Toast muncul di pojok layar, memberi tahu pengguna, lalu menghilang sendiri. Standar UX modern.",
+          "icon": "alert/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "CSS mengelola State, JS mengontrolnya",
+          "isi": "Modal secara default display:none. JavaScript hanya menambah/menghapus class. CSS yang mengurus bagaimana transisinya. Pemisahan tanggung jawab ini membuat kode jauh lebih bersih.",
+          "icon": "code/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "code",
+      "caption": "HTML: Struktur Modal Edit",
+      "lang": "html",
+      "colorPreset": "dracula",
+      "lineNumbers": true,
+      "code": "<!-- Modal — letakkan sebelum penutup </body> -->\n<div id=\"modalOverlay\" class=\"modal-overlay\">\n  <div class=\"modal-box\">\n\n    <div class=\"modal-header\">\n      <h2>Edit Artikel</h2>\n      <button id=\"btnCloseModal\" class=\"btn-close\">&times;</button>\n    </div>\n\n    <div class=\"modal-body\">\n      <!-- ID berbeda dari form utama agar tidak konflik -->\n      <input  type=\"hidden\" id=\"editId\">  <!-- Simpan ID tersembunyi -->\n      <input  type=\"text\"   id=\"editTitle\"   placeholder=\"Judul artikel...\">\n      <textarea            id=\"editContent\" placeholder=\"Konten artikel...\"></textarea>\n    </div>\n\n    <div class=\"modal-footer\">\n      <button id=\"btnUpdate\" class=\"btn-primary\">Simpan Perubahan</button>\n      <button id=\"btnCancel\" class=\"btn-secondary\">Batal</button>\n    </div>\n\n  </div>\n</div>\n\n<!-- Toast Notification -->\n<div id=\"toastNotif\" class=\"toast\"></div>"
+    },
+
+    {
+      "section": "code",
+      "caption": "CSS: Modal Overlay & Toast Notification",
+      "lang": "css",
+      "colorPreset": "nord",
+      "lineNumbers": true,
+      "code": "/* ===== MODAL ===== */\n.modal-overlay {\n  position: fixed;     /* Menutupi seluruh layar */\n  inset: 0;            /* top:0, right:0, bottom:0, left:0 */\n  background: rgba(0, 0, 0, 0.5);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  z-index: 100;\n  opacity: 0;           /* Default: transparan */\n  pointer-events: none; /* Default: tidak bisa di-klik */\n  transition: opacity 0.25s ease;\n}\n\n.modal-overlay.active {\n  opacity: 1;\n  pointer-events: all; /* JS tambahkan class 'active' untuk tampilkan */\n}\n\n.modal-box {\n  background: #fff;\n  border-radius: var(--radius);\n  padding: 1.5rem;\n  width: min(480px, 90vw); /* Responsif: maks 480px atau 90% lebar layar */\n  transform: translateY(-20px);\n  transition: transform 0.25s ease;\n}\n\n.modal-overlay.active .modal-box {\n  transform: translateY(0); /* Animasi slide-down saat aktif */\n}\n\n/* ===== TOAST NOTIFICATION ===== */\n.toast {\n  position: fixed;\n  bottom: 1.5rem;\n  right: 1.5rem;\n  padding: 0.75rem 1.25rem;\n  border-radius: var(--radius);\n  color: #fff;\n  font-weight: 600;\n  font-size: 0.875rem;\n  opacity: 0;\n  transform: translateY(20px);\n  transition: opacity 0.3s, transform 0.3s;\n  z-index: 200;\n}\n\n.toast.show {\n  opacity: 1;\n  transform: translateY(0);\n}\n\n.toast.success { background: var(--success); }\n.toast.error   { background: var(--danger);  }"
+    },
+
+    {
+      "section": "stats",
+      "caption": "3 Fitur Antarmuka Lanjutan",
+      "content": [
+        {
+          "nama": "Modal System",
+          "isi": "position: fixed + z-index tinggi = elemen mengambang di atas semua konten. Opacity transition + pointer-events = animasi buka/tutup yang mulus tanpa JavaScript animation.",
+          "icon": "lock/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Toast Notification",
+          "isi": "Posisi fixed di pojok layar. JavaScript menambah class .show untuk memunculkan, setTimeout menghapusnya setelah 2.5 detik. Pengguna mendapat feedback tanpa interupsi.",
+          "icon": "alert/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Visual Hierarchy",
+          "isi": "Tipografi, kontras warna, dan spasi yang konsisten membantu pengguna memahami mana yang bisa diklik, mana yang penting, dan mana yang sebagai informasi saja.",
+          "icon": "user/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "code",
+      "caption": "Preview JS: Cara Kontrol Modal & Toast (Dipraktikkan di P5)",
+      "lang": "js",
+      "colorPreset": "github-dark",
+      "lineNumbers": true,
+      "code": "// Ini preview — akan dikerjakan penuh di Pertemuan 5\n// Tujuan: pahami MENGAPA kita butuh struktur HTML & CSS yang sudah dibuat\n\nconst modalOverlay = document.getElementById('modalOverlay');\nconst toastNotif   = document.getElementById('toastNotif');\n\n// Tampilkan modal\nfunction openModal() {\n  modalOverlay.classList.add('active'); // CSS yang mengurus animasinya\n}\n\n// Tutup modal\nfunction closeModal() {\n  modalOverlay.classList.remove('active');\n}\n\n// Tampilkan toast notification\nfunction showToast(message, type = 'success') {\n  toastNotif.textContent = message;\n  toastNotif.className   = `toast ${type} show`;\n  setTimeout(() => {\n    toastNotif.classList.remove('show'); // Auto-hilang setelah 2.5 detik\n  }, 2500);\n}\n\n// Contoh penggunaan:\n// showToast('Artikel berhasil disimpan!');\n// showToast('Judul tidak boleh kosong!', 'error');"
+    },
+
+    {
+      "section": "progress",
+      "caption": "Target Pengembangan Komponen",
+      "content": [
+        { "label": "HTML struktur modal lengkap dengan ID sistematis", "percent": 100, "value": "Wajib" },
+        { "label": "CSS modal overlay dengan opacity transition", "percent": 95, "value": "Animasi CSS" },
+        { "label": "CSS toast notification dengan auto-hide concept", "percent": 85, "value": "UX Modern" },
+        { "label": "Responsivitas modal menggunakan min()", "percent": 80, "value": "Mobile-Safe" }
+      ]
+    },
+
+    {
+      "section": "table",
+      "caption": "Aktivitas Praktikum",
+      "content": [
+        { "Aktivitas": "Buat Struktur Modal", "Detail Tugas": "Susun HTML modal form edit. Verifikasi semua ID input di modal tidak bentrok dengan ID form utama." },
+        { "Aktivitas": "CSS Overlay Effect", "Detail Tugas": "Implementasi opacity transition dan pointer-events. Test dengan menambah class 'active' manual di DevTools." },
+        { "Aktivitas": "Styling Toast", "Detail Tugas": "Desain toast di pojok kanan bawah. Buat dua variant: .success (hijau) dan .error (merah)." },
+        { "Aktivitas": "Uji Visual", "Detail Tugas": "Toggle class 'active' pada modal dan 'show' pada toast via DevTools Console. Konfirmasi animasi berjalan mulus." }
+      ]
+    },
+
+    {
+      "section": "btn",
+      "btn": [
+        { "text": "Menu", "modal": "web/side/modules", "icon": "menu" },
+        { "text": "Kembali", "url": "web/page/modul03", "icon": "prev" },
+        { "text": "Lanjut", "url": "web/page/modul05", "icon": "next" }
+      ]
+    }
+  ]
+}

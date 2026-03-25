@@ -1,0 +1,153 @@
+{
+  "page": "welcome_screen_pemrograman_web",
+  "data": [
+    {
+      "section": "header",
+      "content": {
+        "icon": "code/150/var(--pColor)-var(--pLightColor)",
+        "icon2": "wifi/150/var(--pColor)-var(--pLightColor)",
+        "nama": "Selamat Datang di Mata Kuliah Pemrograman Web",
+        "tagline": "Membangun Masa Depan Digital dengan Vanilla JS & Ekosistem Niura",
+        "deskripsi": "Selamat datang, Web Developer masa depan!\nDi kelas ini, Anda tidak hanya belajar menulis kode — Anda belajar membangun solusi nyata.\nKita akan menjelajahi teknologi client-side modern tanpa bergantung pada framework berat: fokus pada kecepatan, efisiensi, dan persistensi data lokal.",
+        "cta": [
+          { "text": "Mulai Penjelajahan", "link": "#pertemuan_1", "icon": "home" },
+          { "text": "Lihat RPS", "link": "#rps", "icon": "book" }
+        ]
+      }
+    },
+
+    {
+      "section": "stats",
+      "caption": "Tiga Pilar Utama Pembelajaran",
+      "content": [
+        {
+          "nama": "The Foundation",
+          "isi": "HTML5 Semantik & CSS3 Modern (Flexbox/Grid) untuk antarmuka yang responsif, aksesibel, dan siap produksi.",
+          "icon": "code/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "The Logic",
+          "isi": "Vanilla JavaScript ES6+ sebagai otak aplikasi — manipulasi DOM, event handling, dan state management tanpa library.",
+          "icon": "setting/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "The Data",
+          "isi": "Pengelolaan data JSON dan persistensi via LocalStorage sebagai database client-side yang ringan dan efisien.",
+          "icon": "search/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "stats",
+      "caption": "Mengapa Kelas Ini Berbeda?",
+      "content": [
+        {
+          "nama": "Vanilla First",
+          "isi": "Tidak ada React, Vue, atau Angular. Menguasai vanilla JS berarti Anda bisa mempelajari framework apapun dalam hitungan hari — bukan sebaliknya.",
+          "icon": "info/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Build Real Things",
+          "isi": "Setiap pertemuan menghasilkan sesuatu yang bisa dijalankan. Anda tidak menghafal teori — Anda membangun aplikasi nyata yang berfungsi.",
+          "icon": "check/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Industry Standard",
+          "isi": "Pola CRUD + LocalStorage adalah fondasi dari hampir semua web app modern. Anda belajar pola yang sama digunakan oleh developer profesional setiap hari.",
+          "icon": "lock/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Output Portofolio",
+          "isi": "Proyek akhir berupa CMS fungsional yang bisa langsung ditambahkan ke portofolio Anda sebagai bukti kompetensi nyata.",
+          "icon": "user/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "table",
+      "caption": "Peta Perjalanan 16 Pertemuan",
+      "content": [
+        {
+          "Blok": "Blok 1 — Foundation UI [P1–P4]",
+          "Fokus": "Ekosistem Web, HTML5 Semantik, CSS3 Modern, Komponen Modal & Toast",
+          "Output": "Antarmuka CRUD statis yang responsif dan siap disambungkan ke JavaScript."
+        },
+        {
+          "Blok": "Blok 2 — JavaScript & UTS [P5–P8]",
+          "Fokus": "DOM Manipulation, Render Logic, Integrasi Front-End, UTS Live Coding",
+          "Output": "Aplikasi dengan data dinamis dari array — Create, Read, dan Delete tanpa penyimpanan permanen."
+        },
+        {
+          "Blok": "Blok 3 — Data Layer [P9–P11]",
+          "Fokus": "Advanced JS, LocalStorage, Async/Await & Fetch API",
+          "Output": "Sistem data yang persisten: data tidak hilang setelah refresh, bisa diisi dari file JSON eksternal."
+        },
+        {
+          "Blok": "Blok 4 — Full CRUD & UAS [P12–P16]",
+          "Fokus": "Create+Read, Update+Delete, Finalisasi, Demo & UAS CMS",
+          "Output": "Aplikasi CMS lengkap: CRUD penuh, LocalStorage, Fetch API, pencarian real-time, dan siap presentasi."
+        }
+      ]
+    },
+
+    {
+      "section": "progress",
+      "caption": "Roadmap Menuju Master Web",
+      "content": [
+        { "label": "Foundation UI — Pertemuan 1–4", "percent": 25, "value": "HTML5 + CSS3 + Komponen" },
+        { "label": "JavaScript Logic — Pertemuan 5–8", "percent": 50, "value": "DOM + Event + Render" },
+        { "label": "Data Persistence — Pertemuan 9–11", "percent": 75, "value": "JSON + LocalStorage + Fetch" },
+        { "label": "Full CRUD & CMS — Pertemuan 12–16", "percent": 100, "value": "Expert Level" }
+      ]
+    },
+
+    {
+      "section": "btn",
+      "btn": [
+        { "text": "Hubungi Dosen (WA)", "url": "https://wa.me/yourlink", "icon": "whatsapp" },
+        { "text": "Grup Komunitas", "url": "#discord", "icon": "discord" }
+      ]
+    },
+
+
+    {
+      "section": "stats",
+      "caption": "Modul",
+      "content": [
+        { "title": "Modul 1", "desc": "Ekosistem Web, arsitektur client-server, dan kontrak perkuliahan.", "icon": "home", "url": "web/page/modul01" },
+        { "title": "Modul 2", "desc": "HTML5 semantik, form input, dan wadah tabel dinamis untuk CRUD.", "icon": "code", "url": "web/page/modul02" },
+        { "title": "Modul 3", "desc": "CSS3 Flexbox/Grid, responsivitas, dan estetika UI profesional.", "icon": "menu", "url": "web/page/modul03" },
+        { "title": "Modul 4", "desc": "Komponen Modal, Toast Notification, dan animasi CSS @keyframes.", "icon": "alert", "url": "web/page/modul04" },
+        { "title": "Modul 5", "desc": "Vanilla JS dasar, DOM selection, event listeners, dan .value.", "icon": "setting", "url": "web/page/modul05" },
+        { "title": "Modul 6", "desc": "Render logic: forEach, template literals, dan class manipulation.", "icon": "code", "url": "web/page/modul06" },
+        { "title": "Modul 7", "desc": "Review & integrasi: HTML + CSS + JS menjadi satu prototipe utuh.", "icon": "check", "url": "web/page/modul07" },
+        { "title": "UTS", "desc": "Live Coding: membangun modul antarmuka interaktif mandiri.", "icon": "lock", "url": "web/page/modul08" },
+        { "title": "Modul 9", "desc": "Object, Array, JSON.stringify/parse, dan Higher-Order Functions.", "icon": "book", "url": "web/page/modul09" },
+        { "title": "Modul 10", "desc": "LocalStorage API: setItem, getItem, dan auto-load saat startup.", "icon": "lock", "url": "web/page/modul10" },
+        { "title": "Modul 11", "desc": "Async/Await, Fetch API, dan strategi hydration data ke storage.", "icon": "search", "url": "web/page/modul11" },
+        { "title": "Modul 12", "desc": "CRUD Create & Read: fetch data, render tabel, simpan permanen.", "icon": "code", "url": "web/page/modul12" },
+        { "title": "Modul 13", "desc": "CRUD Update & Delete: targeting by ID, filter array, editing state.", "icon": "setting", "url": "web/page/modul13" },
+        { "title": "Modul 14", "desc": "Finalisasi Niura: search real-time, refactoring, dan branding sync.", "icon": "check", "url": "web/page/modul14" },
+        { "title": "Modul 15", "desc": "Final Review & Demo: QA, presentasi, dan validasi Article System.", "icon": "user", "url": "web/page/modul15" },
+        { "title": "UAS", "desc": "Build CMS SPA mandiri: Full CRUD + LocalStorage + Fetch API.", "icon": "lock", "url": "web/page/modul16" }
+      ]
+    },
+
+    {
+      "section": "stats",
+      "caption": "tentangs",
+      "content": [
+        { "icon": "piawai/150", "title": "Filosofi", "desc": "Teknologi yang baik adalah yang tidak terlihat, namun membuat segalanya terasa mungkin." }
+      ]
+    }
+  ]
+}

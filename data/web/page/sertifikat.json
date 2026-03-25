@@ -1,0 +1,14 @@
+{
+"data": [
+
+{
+"section": "cert",
+"caption": "Verifikasi Sertifikat Digital",
+"json_url": "data/web/cert/sertifikat.json",
+
+"btn": [
+{ "text": "Download PNG", "icon": "download", "modal": "web/downloadPNG"}
+]
+}
+]
+}

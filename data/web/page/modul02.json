@@ -1,0 +1,115 @@
+{
+  "page": "pertemuan_2_html5_struktur_dan_semantik",
+  "data": [
+    {
+      "section": "header",
+      "content": {
+        "nama": "Pertemuan 2: HTML5 — Struktur Data & Semantik Antarmuka",
+        "tagline": "HTML bukan sekadar tag — ia adalah kontrak antara konten, browser, dan JavaScript.",
+        "deskripsi": "Fokus pada HTML5 sebagai penyedia input dan wadah render data untuk sistem LocalStorage.\nMahasiswa mempelajari anatomi dokumen, elemen semantik, dan optimasi form — karena ID yang salah di sini akan merusak seluruh logika JavaScript nanti.",
+        "cta": [
+          { "text": "Lihat Dokumentasi HTML5", "link": "#materi-inti", "icon": "book" }
+        ]
+      }
+    },
+
+    {
+      "section": "stats",
+      "caption": "Mengapa Struktur HTML yang Benar Itu Krusial?",
+      "content": [
+        {
+          "nama": "ID Salah = JS Buta",
+          "isi": "JavaScript mengambil elemen via ID. Jika ID typo atau tidak konsisten, document.getElementById() mengembalikan null dan seluruh logika CRUD berhenti berfungsi.",
+          "icon": "alert/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Semantik = SEO + Aksesibilitas",
+          "isi": "Tag <main>, <header>, <section> bukan sekadar estetika. Mereka membantu screen reader, mesin pencari, dan developer lain memahami struktur halaman tanpa membaca setiap baris.",
+          "icon": "info/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Tabel Kosong = Canvas JavaScript",
+          "isi": "Kita sengaja membuat <tbody id='tableBody'> yang kosong. JavaScript-lah yang akan mengisinya nanti — HTML hanya menyiapkan wadahnya.",
+          "icon": "code/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "code",
+      "caption": "Boilerplate HTML5 — Struktur Wajib Proyek",
+      "lang": "html",
+      "colorPreset": "dracula",
+      "lineNumbers": true,
+      "code": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Niura — Article System</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n\n  <header>\n    <h1>Niura</h1>\n  </header>\n\n  <main>\n    <!-- Form Input (Create) -->\n    <section id=\"form-section\">\n      <form id=\"articleForm\">\n        <input type=\"text\"     id=\"inputTitle\"   placeholder=\"Judul artikel...\">\n        <textarea             id=\"inputContent\" placeholder=\"Konten artikel...\"></textarea>\n        <button type=\"submit\" id=\"btnSave\">Simpan</button>\n      </form>\n    </section>\n\n    <!-- Data Display (Read) -->\n    <section id=\"table-section\">\n      <table>\n        <thead>\n          <tr><th>No</th><th>Judul</th><th>Konten</th><th>Aksi</th></tr>\n        </thead>\n        <tbody id=\"tableBody\">\n          <!-- JavaScript akan mengisi bagian ini -->\n        </tbody>\n      </table>\n    </section>\n  </main>\n\n  <script src=\"app.js\"></script> <!-- Selalu di bawah body -->\n</body>\n</html>"
+    },
+
+    {
+      "section": "stats",
+      "caption": "3 Komponen HTML Utama Aplikasi CRUD",
+      "content": [
+        {
+          "nama": "Semantik Layout",
+          "isi": "Gunakan <header>, <main>, <section> untuk hierarki konten. Ini memudahkan CSS menargetkan area yang tepat dan developer lain memahami struktur.",
+          "icon": "menu/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Formulir Input",
+          "isi": "Jantung operasi Create & Update. Setiap elemen input HARUS memiliki id unik yang konsisten dengan variabel JS — ini kontrak yang tidak boleh dilanggar.",
+          "icon": "user/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Data Display (tbody)",
+          "isi": "Tag <tbody id='tableBody'> adalah zona render JavaScript. Kosongkan di HTML, biarkan JS yang mengisi setiap baris secara dinamis.",
+          "icon": "code/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "code",
+      "caption": "Contoh: Elemen ID yang Konsisten untuk CRUD",
+      "lang": "html",
+      "colorPreset": "nord",
+      "lineNumbers": true,
+      "code": "<!-- ❌ SALAH — ID tidak konsisten, JS akan bingung -->\n<input id=\"judulArtikel\" ...>\n<input id=\"input-title\" ...>    <!-- Berbeda format! -->\n<input id=\"InputTitle\" ...>     <!-- Case-sensitive! -->\n\n<!-- ✅ BENAR — Konvensi camelCase konsisten -->\n<input  type=\"text\"     id=\"inputTitle\"    placeholder=\"Judul...\">\n<textarea               id=\"inputContent\"  placeholder=\"Konten...\"></textarea>\n<input  type=\"text\"     id=\"inputAuthor\"   placeholder=\"Penulis...\">\n<button type=\"submit\"   id=\"btnSave\">Simpan Artikel</button>\n\n<!-- Konvensi Penamaan yang Disarankan:\n  - Input fields  : inputNamaField   (inputTitle, inputContent)\n  - Tombol aksi   : btnNamaAksi      (btnSave, btnEdit, btnDelete)\n  - Container     : sectionNama      (sectionForm, sectionTable)\n  - Target render : tableBody, listContainer\n-->"
+    },
+
+    {
+      "section": "progress",
+      "caption": "Target Kompetensi Praktikum",
+      "content": [
+        { "label": "Hafal struktur boilerplate HTML5 tanpa melihat contoh", "percent": 100, "value": "Wajib" },
+        { "label": "Mampu buat form input dengan ID yang sistematis", "percent": 90, "value": "Krusial" },
+        { "label": "Mampu buat kerangka tabel dengan <tbody> kosong ber-ID", "percent": 85, "value": "Persiapan JS" },
+        { "label": "Memahami mengapa <script> selalu di bawah <body>", "percent": 100, "value": "Konsep Penting" }
+      ]
+    },
+
+    {
+      "section": "table",
+      "caption": "Rincian Aktivitas Praktikum",
+      "content": [
+        { "Aktivitas": "Struktur Dasar", "Detail Tugas": "Membuat file index.html dengan boilerplate HTML5 lengkap dari memori — latih sampai hafal." },
+        { "Aktivitas": "Pembuatan Form", "Detail Tugas": "Membuat form input manajemen artikel (Judul & Konten) dengan ID sistematis sesuai konvensi." },
+        { "Aktivitas": "Wadah Tabel", "Detail Tugas": "Membuat kerangka tabel dengan thead lengkap dan <tbody id='tableBody'> yang masih kosong." },
+        { "Aktivitas": "Verifikasi di Browser", "Detail Tugas": "Buka di browser, inspeksi elemen (F12), konfirmasi semua ID terdeteksi di tab Elements." }
+      ]
+    },
+
+    {
+      "section": "btn",
+      "btn": [
+        { "text": "Menu", "modal": "web/side/modules", "icon": "menu" },
+        { "text": "Kembali", "url": "web/page/modul01", "icon": "prev" },
+        { "text": "Lanjut", "url": "web/page/modul03", "icon": "next" }
+      ]
+    }
+  ]
+}

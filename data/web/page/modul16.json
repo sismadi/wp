@@ -1,0 +1,115 @@
+{
+  "page": "uas_evaluasi_akhir_semester_niura",
+  "data": [
+    {
+      "section": "header",
+      "content": {
+        "nama": "UAS: Pengembangan Single Page Application (SPA) — CMS",
+        "tagline": "Ini bukan tentang menyelesaikan ujian — ini tentang membuktikan Anda seorang web developer.",
+        "deskripsi": "UAS menguji kemampuan integrasi menyeluruh: arsitektur SPA, manajemen state JavaScript, dan persistensi data LocalStorage.\nAnda ditantang membangun CMS fungsional dari nol dengan standar yang sama digunakan di industri.",
+        "cta": [
+          { "text": "Unduh Lembar Soal", "link": "#download-soal", "icon": "book" }
+        ]
+      }
+    },
+
+    {
+      "section": "stats",
+      "caption": "Apa yang Membuat UAS Ini Berbeda dari UTS?",
+      "content": [
+        {
+          "nama": "SPA: Navigasi Tanpa Reload",
+          "isi": "UTS hanya butuh satu halaman. UAS butuh navigasi antar 'halaman' (Dashboard, List, Add/Edit) tanpa reload. Ini adalah arsitektur Single Page Application — cara semua web app modern bekerja.",
+          "icon": "info/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Full CRUD vs C+D saja",
+          "isi": "UTS menguji Create dan Delete (dan render). UAS menguji seluruh siklus CRUD termasuk Update — operasi paling kompleks karena membutuhkan state management dan form population.",
+          "icon": "code/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Data Hydration via Fetch",
+          "isi": "UTS hanya punya array sementara. UAS mengintegrasikan Fetch API dengan LocalStorage dalam pola hydration yang benar — data tetap ada bahkan jika storage dihapus manual.",
+          "icon": "lock/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "code",
+      "caption": "Arsitektur SPA — Navigasi Tanpa Reload",
+      "lang": "js",
+      "colorPreset": "dracula",
+      "lineNumbers": true,
+      "code": "// ===== POLA SPA NAVIGATION =====\n// Setiap 'halaman' sebenarnya adalah section yang disembunyikan/ditampilkan\n\n// HTML yang dibutuhkan:\n// <nav>\n//   <a href=\"#\" onclick=\"navigate('dashboard')\">Dashboard</a>\n//   <a href=\"#\" onclick=\"navigate('list')\">Daftar Artikel</a>\n//   <a href=\"#\" onclick=\"navigate('add')\">Tambah Artikel</a>\n// </nav>\n// <section id=\"page-dashboard\" class=\"page\">...</section>\n// <section id=\"page-list\"      class=\"page\">...</section>\n// <section id=\"page-add\"       class=\"page\">...</section>\n\n// CSS:\n// .page { display: none; }\n// .page.active { display: block; }\n\n// JavaScript:\nfunction navigate(pageName) {\n  // Sembunyikan semua halaman\n  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));\n\n  // Tampilkan halaman yang dituju\n  const target = document.getElementById(`page-${pageName}`);\n  if (target) target.classList.add('active');\n\n  // Update navigasi aktif\n  document.querySelectorAll('nav a').forEach(a => a.classList.remove('nav-active'));\n  document.querySelector(`[onclick*=\"'${pageName}'\"]`)?.classList.add('nav-active');\n\n  // Refresh data saat masuk halaman list\n  if (pageName === 'list') renderTable();\n  if (pageName === 'dashboard') updateDashboardStats();\n}\n\n// Tampilkan halaman pertama saat load\nnavigate('dashboard');"
+    },
+
+    {
+      "section": "code",
+      "caption": "Dashboard Stats — Fitur Bonus yang Berkesan",
+      "lang": "js",
+      "colorPreset": "nord",
+      "lineNumbers": true,
+      "code": "// Fungsi untuk menampilkan statistik ringkasan di Dashboard\nfunction updateDashboardStats() {\n  const total   = articles.length;\n  const thisMonth = articles.filter(a => {\n    const date = new Date(a.createdAt.split('/').reverse().join('-'));\n    const now  = new Date();\n    return date.getMonth() === now.getMonth() &&\n           date.getFullYear() === now.getFullYear();\n  }).length;\n\n  // Update elemen stat di Dashboard\n  const elTotal = document.getElementById('statTotal');\n  const elMonth = document.getElementById('statThisMonth');\n\n  if (elTotal) elTotal.textContent = total;\n  if (elMonth) elMonth.textContent = thisMonth;\n}\n\n// HTML Dashboard contoh:\n// <div class=\"stat-card\">\n//   <span id=\"statTotal\" class=\"stat-number\">0</span>\n//   <span class=\"stat-label\">Total Artikel</span>\n// </div>\n// <div class=\"stat-card\">\n//   <span id=\"statThisMonth\" class=\"stat-number\">0</span>\n//   <span class=\"stat-label\">Bulan Ini</span>\n// </div>"
+    },
+
+    {
+      "section": "table",
+      "caption": "Rubrik Penilaian UAS (100%)",
+      "content": [
+        { "No": "1", "Kriteria": "Logika CRUD Penuh", "Bobot": "30%", "Deskripsi": "C-R-U-D berjalan sempurna: tambah, tampil, edit, simpan perubahan, hapus dengan konfirmasi." },
+        { "No": "2", "Kriteria": "Arsitektur SPA", "Bobot": "20%", "Deskripsi": "Navigasi antar menu (min 3: Dashboard/List/Add) tanpa reload. preventDefault() pada semua link/form." },
+        { "No": "3", "Kriteria": "Persistensi Data", "Bobot": "20%", "Deskripsi": "LocalStorage berfungsi. Fetch + Hydration: data muncul dari data.json jika storage kosong." },
+        { "No": "4", "Kriteria": "UI/UX & Responsivitas", "Bobot": "20%", "Deskripsi": "Desain profesional, rapi di mobile, CSS Variables Niura, toast, empty state, loading state." },
+        { "No": "5", "Kriteria": "Kualitas Kode", "Bobot": "10%", "Deskripsi": "Kode modular, komentar pada setiap fungsi, tidak ada console.log debug, struktur folder rapi." }
+      ]
+    },
+
+    {
+      "section": "progress",
+      "caption": "Target Kualitas Aplikasi",
+      "content": [
+        { "label": "Logika JavaScript ES6+ yang bersih dan modular", "percent": 100, "value": "Advanced" },
+        { "label": "UI/UX responsif dengan CSS Variables Niura", "percent": 90, "value": "Polished" },
+        { "label": "SPA navigation minimal 3 menu tanpa reload", "percent": 85, "value": "Architectural" },
+        { "label": "Dokumentasi kode: komentar dan penamaan deskriptif", "percent": 85, "value": "Professional" }
+      ]
+    },
+
+    {
+      "section": "stats",
+      "caption": "Tips Terakhir untuk Sukses UAS",
+      "content": [
+        {
+          "nama": "Kerjakan Bertahap, Bukan Sekaligus",
+          "isi": "Mulai dari HTML + navigasi SPA → CSS → CRUD dasar (tanpa storage) → tambah storage → tambah fetch → polish UI. Jangan loncat ke Fetch sebelum CRUD dasar berjalan.",
+          "icon": "check/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Console adalah GPS Anda",
+          "isi": "Setiap error di Console memiliki nomor baris. Baca pesannya, buka file di baris itu, perbaiki. Jangan panik melihat error merah — itu informasi, bukan hukuman.",
+          "icon": "search/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Kode yang Bekerja > Kode yang Cantik",
+          "isi": "Jika waktu terbatas, prioritaskan fungsionalitas (70% nilai) baru visual (20% nilai). CMS yang fungsional tapi tampilan sederhana lebih bernilai dari CMS cantik yang CRUD-nya tidak jalan.",
+          "icon": "info/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "btn",
+      "btn": [
+        { "text": "Menu", "modal": "web/side/modules", "icon": "menu" },
+        { "text": "Kembali", "url": "web/page/modul15", "icon": "prev" }
+      ]
+    }
+  ]
+}

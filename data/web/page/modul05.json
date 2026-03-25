@@ -1,0 +1,115 @@
+{
+  "page": "pertemuan_5_javascript_dom_manipulasi",
+  "data": [
+    {
+      "section": "header",
+      "content": {
+        "nama": "Pertemuan 5: Vanilla JavaScript Dasar & Manipulasi DOM",
+        "tagline": "HTML adalah tubuh. CSS adalah penampilan. JavaScript adalah otaknya.",
+        "deskripsi": "Titik balik dari desain menuju pemrograman. Mahasiswa mempelajari dasar Vanilla JS, teknik seleksi elemen DOM, dan penanganan interaksi pengguna melalui Event Listeners.\nSemua yang dibangun di P2–P4 kini mulai 'hidup'.",
+        "cta": [
+          { "text": "Mulai Coding JS", "link": "#js-section", "icon": "code" }
+        ]
+      }
+    },
+
+    {
+      "section": "stats",
+      "caption": "Mengapa Harus Mengerti DOM Manipulation?",
+      "content": [
+        {
+          "nama": "HTML adalah Statis, DOM adalah Dinamis",
+          "isi": "HTML yang Anda tulis adalah template. DOM adalah representasi hidup di memori browser. JavaScript memanipulasi DOM — bukan file HTML langsung. Memahami perbedaan ini mencegah kebingungan besar.",
+          "icon": "info/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "getElementById vs querySelector",
+          "isi": "getElementById('#id') lebih cepat untuk satu elemen spesifik. querySelector() lebih fleksibel (bisa gunakan CSS selector apapun). Untuk proyek kita, getElementById sudah ideal.",
+          "icon": "search/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "preventDefault() Wajib pada Form",
+          "isi": "Tanpa preventDefault(), submit form memuat ulang halaman — menghapus semua data di memori. Ini baris kode pertama yang wajib ada di setiap event handler form.",
+          "icon": "alert/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "code",
+      "caption": "Koneksi HTML ke JavaScript — Pola Dasar",
+      "lang": "js",
+      "colorPreset": "dracula",
+      "lineNumbers": true,
+      "code": "// ===== STEP 1: SELEKSI ELEMEN DOM =====\n// Hubungkan variabel JS ke elemen HTML via ID\n// Letakkan ini di bagian ATAS file app.js\n\nconst articleForm   = document.getElementById('articleForm');\nconst inputTitle    = document.getElementById('inputTitle');\nconst inputContent  = document.getElementById('inputContent');\nconst btnSave       = document.getElementById('btnSave');\nconst tableBody     = document.getElementById('tableBody');\nconst modalOverlay  = document.getElementById('modalOverlay');\nconst toastNotif    = document.getElementById('toastNotif');\n\n// Verifikasi: semua harus menampilkan elemen, bukan null\nconsole.log('Form    :', articleForm);\nconsole.log('Input   :', inputTitle);\nconsole.log('Table   :', tableBody);\n// Jika ada yang null = ID di HTML tidak cocok dengan yang di atas!\n\n// ===== STEP 2: EVENT LISTENERS =====\n// Daftarkan fungsi yang akan dipanggil saat event terjadi\n\narticleForm.addEventListener('submit', function(event) {\n  event.preventDefault(); // WAJIB — cegah reload halaman!\n  console.log('Form di-submit!');\n  console.log('Judul :', inputTitle.value);\n  console.log('Konten:', inputContent.value);\n});"
+    },
+
+    {
+      "section": "code",
+      "caption": "Manipulasi DOM — Read, Write, Style",
+      "lang": "js",
+      "colorPreset": "nord",
+      "lineNumbers": true,
+      "code": "// ===== MEMBACA DATA DARI ELEMEN =====\nconst judul   = inputTitle.value;    // Ambil teks yang diketik\nconst konten  = inputContent.value;  // Ambil isi textarea\n\n// ===== MENULIS DATA KE ELEMEN =====\ntableBody.innerHTML = '<tr><td>Test</td></tr>'; // Ganti seluruh isi\ndocument.getElementById('jumlahData').textContent = '5 artikel'; // Ganti teks\n\n// ===== MANIPULASI STYLE via CLASS =====\nmodalOverlay.classList.add('active');     // Tampilkan modal\nmodalOverlay.classList.remove('active'); // Sembunyikan modal\nmodalOverlay.classList.toggle('active'); // Toggle buka/tutup\n\n// ===== PRAKTIK: Kontrol Modal via Event =====\nbtnSave.addEventListener('click', function() {\n  // Ambil nilai input\n  const title   = inputTitle.value.trim();\n  const content = inputContent.value.trim();\n\n  // Validasi sederhana\n  if (!title || !content) {\n    alert('Judul dan konten wajib diisi!'); // Sementara pakai alert\n    return; // Hentikan eksekusi\n  }\n\n  // Tampilkan hasil di console (belum ke tabel)\n  console.log({ title, content });\n});"
+    },
+
+    {
+      "section": "stats",
+      "caption": "3 Konsep Inti JavaScript",
+      "content": [
+        {
+          "nama": "DOM Selection",
+          "isi": "getElementById() adalah gerbang antara HTML dan JS. Setiap elemen yang akan dimanipulasi harus diseleksi dulu. Variabel ini biasanya dideklarasikan di bagian atas file.",
+          "icon": "search/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Event Listeners",
+          "isi": "addEventListener(event, callback) mendaftarkan fungsi yang dipanggil saat event terjadi. Event umum: 'click', 'submit', 'keyup', 'change'. Callback menerima objek event.",
+          "icon": "user/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Data Handling",
+          "isi": ".value mengambil teks dari input/textarea. .trim() menghapus spasi di awal/akhir. .textContent dan .innerHTML menulis ke elemen. Ini tiga properti paling sering digunakan.",
+          "icon": "book/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "progress",
+      "caption": "Target Pembelajaran Logika",
+      "content": [
+        { "label": "Mampu seleksi semua elemen DOM yang dibutuhkan", "percent": 100, "value": "Wajib" },
+        { "label": "Mampu daftarkan event listener pada form dan tombol", "percent": 90, "value": "Krusial" },
+        { "label": "Selalu gunakan event.preventDefault() pada form submit", "percent": 100, "value": "Wajib" },
+        { "label": "Mampu baca .value dan tulis ke .innerHTML / .textContent", "percent": 85, "value": "Penting" }
+      ]
+    },
+
+    {
+      "section": "table",
+      "caption": "Aktivitas Praktikum",
+      "content": [
+        { "Aktivitas": "Hello Console", "Deskripsi Tugas": "Tulis console.log('Aplikasi dimulai!') dan konfirmasi tampil di DevTools Console. Test koneksi script." },
+        { "Aktivitas": "Seleksi Semua Elemen", "Deskripsi Tugas": "Deklarasikan variabel untuk semua elemen DOM yang dibutuhkan. Log ke console, pastikan tidak ada yang null." },
+        { "Aktivitas": "Tangkap Data Form", "Deskripsi Tugas": "Buat form submit handler. Tangkap .value dari inputTitle dan inputContent. Log hasilnya." },
+        { "Aktivitas": "Kontrol Modal", "Deskripsi Tugas": "Buat fungsi openModal() dan closeModal() menggunakan classList.add/remove. Ikat ke tombol." }
+      ]
+    },
+
+    {
+      "section": "btn",
+      "btn": [
+        { "text": "Menu", "modal": "web/side/modules", "icon": "menu" },
+        { "text": "Kembali", "url": "web/page/modul04", "icon": "prev" },
+        { "text": "Lanjut", "url": "web/page/modul06", "icon": "next" }
+      ]
+    }
+  ]
+}

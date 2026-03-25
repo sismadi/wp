@@ -1,0 +1,101 @@
+{
+  "page": "pertemuan_10_persistensi_data_localstorage",
+  "data": [
+    {
+      "section": "header",
+      "content": {
+        "nama": "Pertemuan 10: Persistensi Data dengan LocalStorage",
+        "tagline": "Data yang hilang saat refresh bukan aplikasi — itu hanya demo. Sekarang kita buat aplikasi sungguhan.",
+        "deskripsi": "Mahasiswa mempelajari Web Storage API untuk menyimpan data permanen di sisi klien.\nSetelah pertemuan ini, artikel yang Anda tambahkan akan tetap ada meski browser ditutup dan dibuka kembali.",
+        "cta": [
+          { "text": "Eksplorasi Web Storage", "link": "#storage-section", "icon": "lock" }
+        ]
+      }
+    },
+
+    {
+      "section": "stats",
+      "caption": "Memahami LocalStorage dengan Benar",
+      "content": [
+        {
+          "nama": "LocalStorage bukan Database",
+          "isi": "LocalStorage adalah pasangan key-value di browser — seperti catatan tempel di komputer pengguna. Kapasitasnya ~5MB per domain, tidak sinkron antar perangkat, dan tidak aman untuk data sensitif.",
+          "icon": "info/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Kenapa Bukan SessionStorage?",
+          "isi": "SessionStorage hilang saat tab ditutup — sama seperti array JavaScript kita selama ini. LocalStorage bertahan sampai pengguna manual menghapusnya. Untuk aplikasi CRUD kita, LocalStorage adalah pilihan tepat.",
+          "icon": "alert/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Pola Sinkronisasi yang Benar",
+          "isi": "Jangan simpan ke storage di setiap keystroke. Pola yang benar: (1) Muat dari storage saat startup, (2) Modifikasi array di memori, (3) Simpan ke storage setelah setiap perubahan, (4) Render dari array.",
+          "icon": "code/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "code",
+      "caption": "Pola CRUD dengan LocalStorage — Implementasi Lengkap",
+      "lang": "js",
+      "colorPreset": "dracula",
+      "lineNumbers": true,
+      "code": "// ===== KONSTANTA KUNCI STORAGE =====\nconst STORAGE_KEY = 'niura_articles';\n\n// ===== MUAT DATA DARI STORAGE =====\n// Dipanggil sekali saat aplikasi pertama dijalankan\nfunction loadFromStorage() {\n  const raw = localStorage.getItem(STORAGE_KEY);\n  return raw ? JSON.parse(raw) : []; // Jika kosong, mulai dengan array kosong\n}\n\n// ===== SIMPAN DATA KE STORAGE =====\n// Dipanggil setiap kali array berubah\nfunction saveToStorage() {\n  localStorage.setItem(STORAGE_KEY, JSON.stringify(articles));\n}\n\n// ===== INISIALISASI — MUAT SAAT STARTUP =====\nlet articles = loadFromStorage();\nrenderTable(); // Tampilkan data yang sudah ada\n\n// ===== UPDATE SEMUA FUNGSI CRUD =====\n\n// Tambah artikel\narticleForm.addEventListener('submit', e => {\n  e.preventDefault();\n  const title   = inputTitle.value.trim();\n  const content = inputContent.value.trim();\n  if (!title || !content) { showToast('Isi semua field!', 'error'); return; }\n\n  articles.push({\n    id: Date.now(), title, content,\n    createdAt: new Date().toLocaleDateString('id-ID')\n  });\n\n  saveToStorage(); // ← TAMBAHAN: simpan ke storage\n  renderTable();\n  clearForm();\n  showToast('Artikel disimpan!');\n});\n\n// Hapus artikel\nfunction deleteArticle(id) {\n  articles = articles.filter(a => a.id !== id);\n  saveToStorage(); // ← TAMBAHAN: simpan ke storage\n  renderTable();\n  showToast('Artikel dihapus!');\n}"
+    },
+
+    {
+      "section": "code",
+      "caption": "Inspeksi LocalStorage di DevTools",
+      "lang": "bash",
+      "colorPreset": "nord",
+      "lineNumbers": false,
+      "code": "# Cara melihat data LocalStorage di browser:\n# 1. Buka DevTools (F12)\n# 2. Klik tab \"Application\" (Chrome) atau \"Storage\" (Firefox)\n# 3. Expand \"Local Storage\" di sidebar kiri\n# 4. Klik \"http://localhost:5500\" (atau URL yang Anda gunakan)\n# 5. Lihat key 'niura_articles' dan nilainya (JSON string)\n\n# Cara clear data manual untuk testing:\n# Method 1: Klik kanan pada key → Delete\n# Method 2: Via Console:\nlocalStorage.removeItem('niura_articles');\n# Method 3: Clear semua storage domain:\nlocalStorage.clear();\n\n# Cara verifikasi data tersimpan via Console:\nJSON.parse(localStorage.getItem('niura_articles'));"
+    },
+
+    {
+      "section": "table",
+      "caption": "4 Method LocalStorage yang Wajib Dikuasai",
+      "content": [
+        { "Method": "localStorage.setItem(key, value)", "Fungsi": "Simpan data. Value HARUS string — gunakan JSON.stringify untuk array/object.", "Contoh": "setItem('niura_articles', JSON.stringify(articles))" },
+        { "Method": "localStorage.getItem(key)", "Fungsi": "Baca data. Mengembalikan string atau null jika key tidak ada.", "Contoh": "JSON.parse(getItem('niura_articles')) || []" },
+        { "Method": "localStorage.removeItem(key)", "Fungsi": "Hapus satu key beserta nilainya.", "Contoh": "removeItem('niura_articles')" },
+        { "Method": "localStorage.clear()", "Fungsi": "Hapus SEMUA data LocalStorage domain ini. Gunakan dengan hati-hati.", "Contoh": "Hanya untuk reset total saat development" }
+      ]
+    },
+
+    {
+      "section": "progress",
+      "caption": "Target Persistensi Data",
+      "content": [
+        { "label": "Implementasikan loadFromStorage() & saveToStorage()", "percent": 100, "value": "Kunci Pertemuan Ini" },
+        { "label": "Setiap mutasi array selalu diikuti saveToStorage()", "percent": 95, "value": "Disiplin Wajib" },
+        { "label": "Data tetap ada setelah browser ditutup & dibuka", "percent": 100, "value": "Bukti Berhasil" },
+        { "label": "Mampu inspect dan clear data via DevTools", "percent": 85, "value": "Debug Skill" }
+      ]
+    },
+
+    {
+      "section": "table",
+      "caption": "Aktivitas Praktikum",
+      "content": [
+        { "Aktivitas": "Fungsi Load & Save", "Deskripsi Tugas": "Implementasikan loadFromStorage() dan saveToStorage(). Test: tambah artikel, refresh, konfirmasi data masih ada." },
+        { "Aktivitas": "Update Semua CRUD", "Deskripsi Tugas": "Tambahkan saveToStorage() setelah setiap operasi add, delete, dan update. Tidak ada exception." },
+        { "Aktivitas": "Inspeksi DevTools", "Deskripsi Tugas": "Buka tab Application → Local Storage. Verifikasi key 'niura_articles' berisi JSON array yang benar." },
+        { "Aktivitas": "Stress Test", "Deskripsi Tugas": "Tambah 5 artikel, hapus 2, update 1, tutup browser, buka kembali. Data harus sama persis." }
+      ]
+    },
+
+    {
+      "section": "btn",
+      "btn": [
+        { "text": "Menu", "modal": "web/side/modules", "icon": "menu" },
+        { "text": "Kembali", "url": "web/page/modul09", "icon": "prev" },
+        { "text": "Lanjut", "url": "web/page/modul11", "icon": "next" }
+      ]
+    }
+  ]
+}

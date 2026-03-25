@@ -1,0 +1,115 @@
+{
+  "page": "pertemuan_6_interaktivitas_dan_logika_render",
+  "data": [
+    {
+      "section": "header",
+      "content": {
+        "nama": "Pertemuan 6: Interaktivitas Lanjutan & Logika Render Antarmuka",
+        "tagline": "Data di array, tampilan di tabel — fungsi renderTable() adalah jembatan di antaranya.",
+        "deskripsi": "Tahap krusial sebelum penyimpanan permanen. Mahasiswa mempelajari logika kondisional untuk validasi, teknik looping untuk render tabel, dan modularitas fungsi.\nSetelah pertemuan ini, data sudah bisa masuk dan tampil — hanya belum tersimpan.",
+        "cta": [
+          { "text": "Pelajari Render Logic", "link": "#render-logic", "icon": "code" }
+        ]
+      }
+    },
+
+    {
+      "section": "stats",
+      "caption": "Konsep Kunci Pertemuan Ini",
+      "content": [
+        {
+          "nama": "Array sebagai Sumber Kebenaran",
+          "isi": "Jangan pernah baca data langsung dari DOM. Simpan data di array JavaScript, biarkan renderTable() yang selalu mengubah array menjadi HTML. Ini pola yang digunakan semua framework modern.",
+          "icon": "info/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Re-render setelah setiap Perubahan",
+          "isi": "Setiap kali data ditambah, dihapus, atau diubah — selalu bersihkan tableBody dan render ulang dari awal. Ini lebih aman daripada mencoba memodifikasi baris tabel secara individual.",
+          "icon": "alert/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Modular = Bisa Dipakai Ulang",
+          "isi": "Fungsi clearForm(), renderTable(), dan showToast() yang dibuat sekali akan dipanggil berkali-kali dari berbagai tempat. Ini prinsip DRY (Don't Repeat Yourself) yang paling mendasar.",
+          "icon": "code/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "code",
+      "caption": "Fungsi renderTable() — Jantung Aplikasi",
+      "lang": "js",
+      "colorPreset": "dracula",
+      "lineNumbers": true,
+      "code": "// Array sebagai sumber data (sementara, akan pindah ke LocalStorage di P10)\nlet articles = [];\n\n// ===== FUNGSI RENDER — Dipanggil setiap kali data berubah =====\nfunction renderTable() {\n  // Selalu bersihkan dulu sebelum render ulang\n  tableBody.innerHTML = '';\n\n  // Handle empty state\n  if (articles.length === 0) {\n    tableBody.innerHTML = `\n      <tr>\n        <td colspan=\"4\" style=\"text-align:center; color:#94a3b8; padding:2rem\">\n          Belum ada artikel. Tambahkan artikel pertama Anda!\n        </td>\n      </tr>\n    `;\n    return;\n  }\n\n  // Render setiap item dari array menggunakan forEach\n  articles.forEach((article, index) => {\n    const row = document.createElement('tr');\n    row.innerHTML = `\n      <td>${index + 1}</td>\n      <td>${article.title}</td>\n      <td>${article.content.substring(0, 80)}...</td>\n      <td>\n        <button onclick=\"setupEdit(${article.id})\"   class=\"btn-primary\" >Edit</button>\n        <button onclick=\"deleteArticle(${article.id})\" class=\"btn-danger\"  >Hapus</button>\n      </td>\n    `;\n    tableBody.appendChild(row);\n  });\n}"
+    },
+
+    {
+      "section": "code",
+      "caption": "Fungsi addArticle() + Validasi + Utilities",
+      "lang": "js",
+      "colorPreset": "nord",
+      "lineNumbers": true,
+      "code": "// ===== TAMBAH DATA (CREATE) =====\narticleForm.addEventListener('submit', function(e) {\n  e.preventDefault();\n\n  const title   = inputTitle.value.trim();\n  const content = inputContent.value.trim();\n\n  // Validasi: jangan izinkan data kosong\n  if (!title) {\n    showToast('Judul artikel wajib diisi!', 'error');\n    inputTitle.focus(); // Kembalikan fokus ke field yang bermasalah\n    return;\n  }\n  if (!content) {\n    showToast('Konten artikel wajib diisi!', 'error');\n    inputContent.focus();\n    return;\n  }\n\n  // Buat object artikel baru\n  const newArticle = {\n    id      : Date.now(),        // ID unik berbasis timestamp\n    title   : title,\n    content : content,\n    createdAt: new Date().toLocaleDateString('id-ID')\n  };\n\n  articles.push(newArticle);   // Tambahkan ke array\n  renderTable();                // Render ulang tabel\n  clearForm();                  // Bersihkan form\n  showToast('Artikel berhasil ditambahkan!');\n});\n\n// ===== UTILITY FUNCTIONS =====\nfunction clearForm() {\n  inputTitle.value   = '';\n  inputContent.value = '';\n  inputTitle.focus(); // Siap untuk input berikutnya\n}\n\n// ===== HAPUS DATA (DELETE) =====\nfunction deleteArticle(id) {\n  // Filter: buat array baru tanpa item yang ID-nya cocok\n  articles = articles.filter(a => a.id !== id);\n  renderTable();\n  showToast('Artikel berhasil dihapus!', 'success');\n}\n\n// ===== INISIALISASI =====\nrenderTable(); // Panggil saat load untuk tampilkan empty state"
+    },
+
+    {
+      "section": "stats",
+      "caption": "3 Pilar Logika Pemrograman UI",
+      "content": [
+        {
+          "nama": "Looping & Render",
+          "isi": "forEach() + Template Literals (backtick) adalah kombinasi terkuat untuk mengubah data array menjadi baris HTML. .map().join('') adalah alternatif yang lebih fungsional.",
+          "icon": "menu/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Validasi Input",
+          "isi": ".trim() untuk hapus spasi, truthy check (!title) untuk cek kosong. Validasi sebelum memproses data mencegah data sampah masuk ke array dan merusak tampilan.",
+          "icon": "info/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Class Manipulation",
+          "isi": "classList.add/remove/toggle mengontrol state visual komponen. Ini koneksi antara CSS yang kita buat di P4 dengan JavaScript. CSS mengatur tampilan, JS mengontrol kapan tampil.",
+          "icon": "setting/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "progress",
+      "caption": "Target Penguasaan",
+      "content": [
+        { "label": "Mampu render array ke tabel menggunakan forEach", "percent": 90, "value": "Kunci Utama" },
+        { "label": "Validasi input tanpa alert() default browser", "percent": 85, "value": "UX Modern" },
+        { "label": "Fungsi modular: clearForm, renderTable, showToast", "percent": 80, "value": "Clean Code" },
+        { "label": "Delete data dengan .filter() berdasarkan ID", "percent": 85, "value": "Logic" }
+      ]
+    },
+
+    {
+      "section": "table",
+      "caption": "Aktivitas Praktikum",
+      "content": [
+        { "Aktivitas": "Render Dummy Data", "Deskripsi Tugas": "Isi array articles dengan 3 objek dummy manual. Panggil renderTable() dan konfirmasi tampil di tabel." },
+        { "Aktivitas": "Form ke Tabel", "Deskripsi Tugas": "Implementasikan form submit handler: tangkap input, buat object, push ke array, renderTable(), clearForm()." },
+        { "Aktivitas": "Fungsi Delete", "Deskripsi Tugas": "Implementasikan deleteArticle(id) menggunakan .filter(). Test hapus setiap baris dan pastikan tabel update." },
+        { "Aktivitas": "Empty State", "Deskripsi Tugas": "Tambahkan tampilan 'belum ada data' saat array kosong. Hapus semua artikel dan konfirmasi empty state muncul." }
+      ]
+    },
+
+    {
+      "section": "btn",
+      "btn": [
+        { "text": "Menu", "modal": "web/side/modules", "icon": "menu" },
+        { "text": "Kembali", "url": "web/page/modul05", "icon": "prev" },
+        { "text": "Lanjut", "url": "web/page/modul07", "icon": "next" }
+      ]
+    }
+  ]
+}

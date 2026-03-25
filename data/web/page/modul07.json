@@ -1,0 +1,80 @@
+{
+  "page": "pertemuan_7_review_dan_integrasi",
+  "data": [
+    {
+      "section": "header",
+      "content": {
+        "nama": "Pertemuan 7: Review & Integrasi Prototipe Antarmuka",
+        "tagline": "Satu aplikasi yang bekerja sempurna lebih berharga dari sepuluh fitur yang setengah jadi.",
+        "deskripsi": "Sesi penguatan untuk menyatukan HTML5, CSS3, dan Vanilla JS menjadi satu kesatuan.\nFokus pada sinkronisasi komponen UI dengan logika program dan persiapan UTS Live Coding.",
+        "cta": [
+          { "text": "Review Checklist UTS", "link": "#uts-prep", "icon": "check" }
+        ]
+      }
+    },
+
+    {
+      "section": "stats",
+      "caption": "Apa yang Harus Sudah Bisa Anda Lakukan?",
+      "content": [
+        {
+          "nama": "HTML + CSS: Antarmuka Siap",
+          "isi": "Form input dengan ID sistematis, tabel dengan <tbody> kosong, modal overlay dengan CSS transition, dan toast notification — semuanya terhubung dan tampil rapi di mobile.",
+          "icon": "check/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "JavaScript: Data Mengalir",
+          "isi": "articles array sebagai sumber data, renderTable() yang otomatis update tampilan, form submit menambah data, tombol hapus mengfilter array — semua terhubung tanpa reload halaman.",
+          "icon": "code/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Yang Belum Ada: Persistensi",
+          "isi": "Refresh halaman = data hilang. Ini normal dan disengaja — persistensi via LocalStorage adalah materi Pertemuan 10. Untuk UTS, data sementara di memori sudah cukup.",
+          "icon": "info/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "code",
+      "caption": "Checklist Kode: Pola yang Harus Ada di app.js",
+      "lang": "js",
+      "colorPreset": "monokai",
+      "lineNumbers": true,
+      "code": "// ✅ CHECKLIST KODE WAJIB — Verifikasi sebelum UTS\n\n// 1. Deklarasi variabel DOM (atas file)\nconst articleForm  = document.getElementById('articleForm');  // ✅?\nconst tableBody    = document.getElementById('tableBody');    // ✅?\n// ... (semua elemen terdeklarasi)\n\n// 2. Array data\nlet articles = [];  // ✅ Pakai 'let', bukan 'const'\n\n// 3. Fungsi render\nfunction renderTable() { /* ... */ }  // ✅ Ada empty state?\n\n// 4. Fungsi utility\nfunction clearForm()          { /* ... */ }  // ✅?\nfunction showToast(msg, type) { /* ... */ }  // ✅?\nfunction openModal()          { /* ... */ }  // ✅?\nfunction closeModal()         { /* ... */ }  // ✅?\n\n// 5. Event listeners\narticleForm.addEventListener('submit', function(e) {\n  e.preventDefault();  // ✅ WAJIB ADA\n  // ... validasi dan addArticle\n});\n\n// 6. Inisialisasi\nrenderTable(); // ✅ Dipanggil di akhir file untuk tampilkan empty state"
+    },
+
+    {
+      "section": "table",
+      "caption": "Aktivitas 'The Integration Lab'",
+      "content": [
+        { "Aktivitas": "Bug Fixing Session", "Deskripsi Tugas": "Identifikasi dan perbaiki kesalahan: tombol hapus tidak berfungsi, modal tidak menutup, atau form tidak clear setelah submit." },
+        { "Aktivitas": "Styling Polish", "Deskripsi Tugas": "Haluskan transisi CSS pada modal (opacity + transform). Pastikan toast muncul dan menghilang dengan animasi." },
+        { "Aktivitas": "Data Flow Test", "Deskripsi Tugas": "Test lengkap: tambah 3 artikel → hapus artikel ke-2 → tambah lagi → hapus semua. Tidak boleh ada error di console." },
+        { "Aktivitas": "Code Documentation", "Deskripsi Tugas": "Tambahkan komentar pada setiap fungsi. Format: // Fungsi: [nama] — [tujuan]. Nilai kerapian kode 5% di UTS." }
+      ]
+    },
+
+    {
+      "section": "progress",
+      "caption": "Kesiapan UTS",
+      "content": [
+        { "label": "Struktur & Semantik HTML5 + ID sistematis", "percent": 100, "value": "Harus Solid" },
+        { "label": "CSS responsif + komponen modal & toast", "percent": 100, "value": "Harus Polished" },
+        { "label": "Logika JS: render, add, delete, validasi, clear", "percent": 90, "value": "Harus Integrated" }
+      ]
+    },
+
+    {
+      "section": "btn",
+      "btn": [
+        { "text": "Menu", "modal": "web/side/modules", "icon": "menu" },
+        { "text": "Kembali", "url": "web/page/modul06", "icon": "prev" },
+        { "text": "Lanjut", "url": "web/page/modul08", "icon": "next" }
+      ]
+    }
+  ]
+}

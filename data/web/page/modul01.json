@@ -1,0 +1,137 @@
+{
+  "page": "pertemuan_1_pengenalan_ekosistem_web",
+  "data": [
+    {
+      "section": "header",
+      "content": {
+        "nama": "Pertemuan 1: Pengenalan Ekosistem Web & Kontrak Perkuliahan",
+        "tagline": "Sebelum menulis satu baris kode pun, pahami dulu medan perangnya.",
+        "deskripsi": "Mahasiswa memahami aturan main, sistem penilaian, dan cakupan materi selama satu semester ke depan.\nFokus pada pemahaman arsitektur web modern dan roadmap pembangunan aplikasi CRUD fungsional.",
+        "cta": [
+          { "text": "Mulai Belajar", "link": "#materi", "icon": "book" }
+        ]
+      }
+    },
+
+    {
+      "section": "stats",
+      "caption": "Kenapa Harus Paham Ekosistem Dulu?",
+      "content": [
+        {
+          "nama": "Tanpa Peta, Anda Akan Tersesat",
+          "isi": "Developer yang langsung coding tanpa memahami arsitektur web sering membangun sesuatu yang 'bekerja di mesin sendiri' tapi gagal di produksi. Peta ekosistem mencegah ini.",
+          "icon": "alert/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Satu Semester, Satu Aplikasi Nyata",
+          "isi": "Setiap pertemuan adalah satu potongan puzzle. Di akhir semester, potongan itu menyatu menjadi aplikasi CMS yang bisa Anda tunjukkan di portofolio dan wawancara kerja.",
+          "icon": "check/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Vanilla JS — Pilihan yang Disengaja",
+          "isi": "Belajar tanpa framework adalah belajar cara berpikir. Setelah menguasai vanilla JS, belajar React atau Vue hanya butuh beberapa hari — karena Anda sudah paham fondasinya.",
+          "icon": "info/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "table",
+      "caption": "Client-Side vs Server-Side — Peta Medan",
+      "content": [
+        {
+          "Aspek": "Lokasi Eksekusi",
+          "Client-Side": "Di browser pengguna (HTML, CSS, JS)",
+          "Server-Side": "Di server (Node.js, PHP, Python)"
+        },
+        {
+          "Aspek": "Penyimpanan Data",
+          "Client-Side": "LocalStorage, IndexedDB, Cookie",
+          "Server-Side": "Database terpusat (MySQL, PostgreSQL)"
+        },
+        {
+          "Aspek": "Kecepatan Respons",
+          "Client-Side": "Sangat cepat — tidak butuh round-trip ke server",
+          "Server-Side": "Tergantung jaringan dan beban server"
+        },
+        {
+          "Aspek": "Skala Data",
+          "Client-Side": "Ideal untuk data ringan (< 5MB per user)",
+          "Server-Side": "Tidak terbatas, data tersentralisasi"
+        },
+        {
+          "Aspek": "Fokus Semester Ini",
+          "Client-Side": "✅ Fokus utama mata kuliah ini",
+          "Server-Side": "Akan dipelajari di mata kuliah lanjutan"
+        }
+      ]
+    },
+
+    {
+      "section": "stats",
+      "caption": "Konsep Dasar & Arsitektur",
+      "content": [
+        {
+          "nama": "Client-Side",
+          "isi": "Kode berjalan di browser: HTML membangun struktur, CSS mengatur tampilan, JS memberikan logika dan interaktivitas.",
+          "icon": "code/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Server-Side",
+          "isi": "Kode di server menangani logika bisnis, autentikasi, dan penyimpanan database terpusat. Semester ini kita tidak ke sini.",
+          "icon": "setting/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Data Flow via JSON",
+          "isi": "Pertukaran data antara komponen menggunakan format JSON — ringan, mudah dibaca manusia, dan dipahami semua bahasa pemrograman.",
+          "icon": "info/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "code",
+      "caption": "Anatomi Proyek Web Sederhana",
+      "lang": "bash",
+      "colorPreset": "nord",
+      "lineNumbers": false,
+      "code": "# Struktur folder proyek semester ini\narticle-system/\n├── index.html        # Antarmuka utama (Pertemuan 2)\n├── style.css         # Tampilan & layout (Pertemuan 3-4)\n├── app.js            # Logika CRUD utama (Pertemuan 5-13)\n├── data.json         # Data awal via Fetch API (Pertemuan 11)\n└── assets/\n    ├── logo.png\n    └── favicon.ico\n\n# Tiga file inti (index.html + style.css + app.js)\n# adalah 100% dari yang dibutuhkan untuk UTS\n# Dua file tambahan (data.json + assets) untuk UAS"
+    },
+
+    {
+      "section": "progress",
+      "caption": "Development Environment Setup",
+      "content": [
+        { "label": "VS Code — Editor Utama", "percent": 100, "value": "Wajib Install" },
+        { "label": "Chrome/Edge + DevTools", "percent": 100, "value": "Wajib — F12 adalah teman terbaik Anda" },
+        { "label": "Live Server Extension (VS Code)", "percent": 100, "value": "Wajib — auto-reload saat coding" },
+        { "label": "Git & GitHub", "percent": 50, "value": "Sangat Dianjurkan untuk portofolio" }
+      ]
+    },
+
+    {
+      "section": "table",
+      "caption": "Ringkasan Aktivitas Pertemuan 1",
+      "content": [
+        { "Aktivitas": "Penyampaian RPS", "Deskripsi": "Visi, misi, sistem penilaian, dan roadmap 16 pertemuan.", "Durasi": "30 Menit" },
+        { "Aktivitas": "Kuliah Teori", "Deskripsi": "Sejarah web, protokol HTTP, evolusi JavaScript, dan demo aplikasi target akhir semester.", "Durasi": "40 Menit" },
+        { "Aktivitas": "Praktikum Setup", "Deskripsi": "Instalasi VS Code + ekstensi, setup folder proyek, dan eksplorasi DevTools (Console, Network, Application tab).", "Durasi": "30 Menit" },
+        { "Aktivitas": "Diskusi", "Deskripsi": "Tanya jawab kontrak perkuliahan, ekspektasi proyek, dan pembentukan grup belajar.", "Durasi": "20 Menit" }
+      ]
+    },
+
+    {
+      "section": "btn",
+      "btn": [
+        { "text": "Menu", "modal": "web/side/modules", "icon": "menu" },
+        { "text": "Lanjut", "url": "web/page/modul02", "icon": "next" }
+      ]
+    }
+  ]
+}

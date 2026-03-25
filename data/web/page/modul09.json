@@ -1,0 +1,115 @@
+{
+  "page": "pertemuan_9_advanced_js_json",
+  "data": [
+    {
+      "section": "header",
+      "content": {
+        "nama": "Pertemuan 9: Advanced JS — Object, Array, & JSON",
+        "tagline": "Sebelum data bisa disimpan, data harus dipahami strukturnya terlebih dahulu.",
+        "deskripsi": "Memasuki paruh kedua dengan fokus pada pengelolaan data kompleks.\nMahasiswa mendalami Array of Objects, transformasi JSON, dan Higher-Order Functions yang menjadi standar industri.",
+        "cta": [
+          { "text": "Eksplorasi Metode Array", "link": "#array-methods", "icon": "code" }
+        ]
+      }
+    },
+
+    {
+      "section": "stats",
+      "caption": "Mengapa Ini Penting Sebelum LocalStorage?",
+      "content": [
+        {
+          "nama": "LocalStorage hanya Menyimpan String",
+          "isi": "Anda tidak bisa menyimpan array atau object langsung ke LocalStorage. Anda harus mengubahnya menjadi JSON string dulu. Tanpa memahami JSON.stringify dan JSON.parse, LocalStorage tidak akan berfungsi.",
+          "icon": "alert/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Higher-Order Functions adalah Standar",
+          "isi": "filter(), map(), dan find() bukan sintaks mewah — ini cara developer profesional memproses data. Kode dengan for-loop manual lebih panjang, lebih rentan bug, dan lebih sulit dibaca.",
+          "icon": "info/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Date.now() = ID Unik Gratis",
+          "isi": "Database punya auto-increment. Kita punya Date.now() yang mengembalikan timestamp milidetik unik. Sempurna sebagai ID — tidak ada dua artikel yang bisa dibuat di milidetik yang sama.",
+          "icon": "code/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "code",
+      "caption": "JSON: Serialisasi & Deserialisasi",
+      "lang": "js",
+      "colorPreset": "dracula",
+      "lineNumbers": true,
+      "code": "// ===== JSON MASTERY =====\n\nconst articles = [\n  { id: 1706000001000, title: 'HTML Dasar',    content: 'Belajar tag semantik...' },\n  { id: 1706000002000, title: 'CSS Flexbox',   content: 'Layout responsif...' },\n  { id: 1706000003000, title: 'JavaScript DOM', content: 'Manipulasi elemen...' }\n];\n\n// STRINGIFY: Array/Object → String (untuk disimpan)\nconst jsonString = JSON.stringify(articles);\nconsole.log(typeof jsonString); // 'string'\nconsole.log(jsonString);\n// Output: '[{\"id\":1706000001000,\"title\":\"HTML Dasar\",...}]'\n\n// PARSE: String → Array/Object (untuk digunakan)\nconst parsedArticles = JSON.parse(jsonString);\nconsole.log(typeof parsedArticles); // 'object' (array)\nconsole.log(parsedArticles[0].title); // 'HTML Dasar'\n\n// ⚠️ Siklus yang akan digunakan di LocalStorage:\n// Simpan : localStorage.setItem('articles', JSON.stringify(articles))\n// Ambil  : JSON.parse(localStorage.getItem('articles'))"
+    },
+
+    {
+      "section": "code",
+      "caption": "Higher-Order Functions — Cara Profesional Proses Data",
+      "lang": "js",
+      "colorPreset": "nord",
+      "lineNumbers": true,
+      "code": "// ===== .filter() — Hapus berdasarkan ID =====\n// Mengembalikan array baru tanpa item yang id-nya cocok\nfunction deleteArticle(id) {\n  articles = articles.filter(article => article.id !== id);\n  // Semua artikel KECUALI yang id-nya sama dengan parameter\n}\n\n// ===== .find() — Cari satu item berdasarkan ID =====\n// Mengembalikan item pertama yang cocok, atau undefined\nfunction setupEdit(id) {\n  const article = articles.find(a => a.id === id);\n  if (article) {\n    editTitle.value   = article.title;\n    editContent.value = article.content;\n    editId.value      = article.id; // Simpan ID di hidden input\n    openModal();\n  }\n}\n\n// ===== .map() — Transformasi seluruh array =====\n// Mengembalikan array baru dengan setiap item ditransformasi\nconst titleList = articles.map(a => a.title);\n// ['HTML Dasar', 'CSS Flexbox', 'JavaScript DOM']\n\nconst tableRows = articles.map((a, i) =>\n  `<tr><td>${i+1}</td><td>${a.title}</td></tr>`\n).join('');\n// Alternatif renderTable() yang lebih fungsional\n\n// ===== .findIndex() — Cari posisi untuk Update =====\nfunction updateArticle(id, newTitle, newContent) {\n  const index = articles.findIndex(a => a.id === id);\n  if (index !== -1) {\n    articles[index].title   = newTitle;\n    articles[index].content = newContent;\n    renderTable();\n  }\n}"
+    },
+
+    {
+      "section": "stats",
+      "caption": "3 Pilar Pengolahan Data",
+      "content": [
+        {
+          "nama": "JSON Mastery",
+          "isi": "JSON.stringify(data) untuk simpan — JSON.parse(string) untuk baca. Ini dua fungsi terpenting untuk integrasi LocalStorage dan Fetch API.",
+          "icon": "book/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Array Methods",
+          "isi": ".filter() untuk hapus, .find() untuk cari satu item, .findIndex() untuk update, .map() untuk transformasi. Kuasai keempatnya dan tidak ada operasi data yang tidak bisa Anda lakukan.",
+          "icon": "menu/32x32/var(--pColor)",
+          "url": "#"
+        },
+        {
+          "nama": "Unique ID via Date.now()",
+          "isi": "Date.now() mengembalikan milidetik sejak 1 Jan 1970. Angka ini unik per transaksi. Untuk aplikasi single-user di browser, ini solusi ID yang sempurna dan sederhana.",
+          "icon": "lock/32x32/var(--pColor)",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "section": "progress",
+      "caption": "Target Kompetensi Data",
+      "content": [
+        { "label": "Hafal siklus JSON.stringify ↔ JSON.parse", "percent": 100, "value": "Wajib untuk LocalStorage" },
+        { "label": "Gunakan .filter() untuk delete, .find() untuk edit", "percent": 90, "value": "Sudah di P6, kuatkan" },
+        { "label": "Gunakan .findIndex() untuk update data di array", "percent": 85, "value": "Kunci fungsi Update" },
+        { "label": "Struktur object: id, title, content, createdAt", "percent": 90, "value": "Standar proyek" }
+      ]
+    },
+
+    {
+      "section": "table",
+      "caption": "Aktivitas Praktikum",
+      "content": [
+        { "Aktivitas": "Object Construction", "Deskripsi Tugas": "Buat object artikel dengan id: Date.now(), title, content, createdAt. Log ke console dan inspeksi strukturnya." },
+        { "Aktivitas": "JSON Roundtrip", "Deskripsi Tugas": "Stringify array articles ke string, log hasilnya, lalu parse kembali. Konfirmasi data tidak berubah setelah roundtrip." },
+        { "Aktivitas": "Array Filtering", "Deskripsi Tugas": "Gunakan .filter() untuk hapus artikel berdasarkan ID. Log array sebelum dan sesudah untuk verifikasi." },
+        { "Aktivitas": "Update dengan findIndex", "Deskripsi Tugas": "Implementasikan fungsi updateArticle() menggunakan .findIndex(). Test update judul artikel pertama." }
+      ]
+    },
+
+    {
+      "section": "btn",
+      "btn": [
+        { "text": "Menu", "modal": "web/side/modules", "icon": "menu" },
+        { "text": "Kembali", "url": "web/page/modul08", "icon": "prev" },
+        { "text": "Lanjut", "url": "web/page/modul10", "icon": "next" }
+      ]
+    }
+  ]
+}
